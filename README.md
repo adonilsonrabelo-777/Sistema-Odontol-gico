@@ -52,6 +52,6 @@ Clique no botão:
 * >> Encerrar
 
 # RESPONSÁVEIS (Grupo)
-> Adonilson Rabelo dos Santos
-> Adelar Paulo Kuhn Filho
-> Maristela Francisco de Carvalho
+> Adonilson Rabelo dos Santos;
+> Adelar Paulo Kuhn Filho;
+> Maristela Francisco de Carvalho.
