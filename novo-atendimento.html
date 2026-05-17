@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Novo Atendimento</title>
+
+    <!-- ÍCONES -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+    href="css/global.css">
+
+    <link rel="stylesheet"
+    href="css/novo-atendimento.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <img
+            src="img/logo.png"
+            alt="Logo">
+
+    
+
+        </div>
+
+        <!-- MENU -->
+
+        <nav class="menu">
+
+            <a href="dashboard-publico.html">
+
+                <i class="fa-solid fa-tv"></i>
+
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="menu-principal.html">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Menu Principal</span>
+
+            </a>
+
+            <a href="pacientes.html">
+
+                <i class="fa-regular fa-user"></i>
+
+                <span>Pacientes</span>
+
+            </a>
+
+            <a
+            href="atendimentos.html"
+            class="active">
+
+                <i class="fa-regular fa-calendar-check"></i>
+
+                <span>Atendimentos</span>
+
+            </a>
+
+            <a href="receituario.html">
+
+                <i class="fa-regular fa-file-lines"></i>
+
+                <span>Receituário</span>
+
+            </a>
+
+            <a href="relatorios.html">
+
+                <i class="fa-regular fa-chart-bar"></i>
+
+                <span>Relatórios</span>
+
+            </a>
+
+            <a href="laudos.html">
+
+                <i class="fa-regular fa-file"></i>
+
+                <span>Laudos</span>
+
+            </a>
+
+            <a href="login.html">
+
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+                <span>Sair</span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <!-- CARD -->
+
+        <div class="card-atendimento">
+
+            <!-- TÍTULO -->
+
+            <h1>
+
+                Novo Atendimento
+
+            </h1>
+
+            <!-- FORM -->
+
+            <form id="formAtendimento">
+
+                <!-- LINHA -->
+
+                <div class="linha">
+
+                    <!-- PACIENTE -->
+
+                    <div class="grupo">
+
+                        <label>
+
+                            Paciente
+
+                        </label>
+
+                        <select id="paciente">
+
+                            <option value="">
+                                Selecione o paciente
+                            </option>
+
+                            <option>
+                                Maria da Silva
+                            </option>
+
+                            <option>
+                                João Pedro Souza
+                            </option>
+
+                            <option>
+                                Ana Paula Santos
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- DATA -->
+
+                    <div class="grupo">
+
+                        <label>
+
+                            Data
+
+                        </label>
+
+                        <div class="input-data">
+
+                            <input
+                            type="date"
+                            id="data">
+
+                            <i class="fa-regular fa-calendar"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- DENTISTA -->
+
+                <div class="grupo">
+
+                    <label>
+
+                        Dentista
+
+                    </label>
+
+                    <select id="dentista">
+
+                        <option value="">
+                            Selecione o dentista
+                        </option>
+
+                        <option>
+                            Dr. Lucas
+                        </option>
+
+                        <option>
+                            Dra. Ana
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- PRIORIDADE -->
+
+                <div class="grupo">
+
+                    <label class="titulo-prioridade">
+
+                        Classificação de Prioridade
+
+                    </label>
+
+                    <div class="prioridades">
+
+                        <!-- PRIORIDADE 1 -->
+
+                        <div
+                        class="card-prioridade vermelho"
+                        onclick="selecionarPrioridade('1° Prioridade')">
+
+                            <i class="fa-solid fa-tooth"></i>
+
+                            <h3>
+                                1° PRIORIDADE
+                            </h3>
+
+                            <p>
+                                Sentindo dores
+                            </p>
+
+                        </div>
+
+                        <!-- PRIORIDADE 2 -->
+
+                        <div
+                        class="card-prioridade amarelo"
+                        onclick="selecionarPrioridade('2° Prioridade')">
+
+                            <i class="fa-solid fa-tooth"></i>
+
+                            <h3>
+                                2° PRIORIDADE
+                            </h3>
+
+                            <p>
+                                Extração dentária
+                            </p>
+
+                        </div>
+
+                        <!-- PRIORIDADE 3 -->
+
+                        <div
+                        class="card-prioridade verde"
+                        onclick="selecionarPrioridade('Pouca Urgência')">
+
+                            <i class="fa-solid fa-tooth"></i>
+
+                            <h3>
+                                POUCA URGÊNCIA
+                            </h3>
+
+                            <p>
+                                Demais casos
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- QUEIXA -->
+
+                <div class="grupo">
+
+                    <label>
+
+                        Queixa principal
+
+                    </label>
+
+                    <textarea
+                    id="queixa"
+                    placeholder="Descreva a queixa do paciente"></textarea>
+
+                </div>
+
+                <!-- BOTÕES -->
+
+                <div class="acoes">
+
+                    <button
+                    type="reset"
+                    class="btn-cancelar">
+
+                        CANCELAR
+
+                    </button>
+
+                    <button
+                    type="submit"
+                    class="btn-salvar">
+
+                        SALVAR
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="js/novo-atendimento.js"></script>
+
+</body>
+</html>

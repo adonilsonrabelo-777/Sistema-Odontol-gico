@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gestão de Atendimentos</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/atendimentos.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <img
+            src="img/logo.png"
+            alt="Logo SaúdeTECH">
+
+        </div>
+
+        <nav class="menu">
+
+            <a href="dashboard-publico.html">
+
+                <i class="fa-solid fa-tv"></i>
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="menu-principal.html">
+
+                <i class="fa-solid fa-house"></i>
+                <span>Menu Principal</span>
+
+            </a>
+
+            <a href="pacientes.html">
+
+                <i class="fa-regular fa-user"></i>
+                <span>Pacientes</span>
+
+            </a>
+
+            <a
+            href="atendimentos.html"
+            class="active">
+
+                <i class="fa-regular fa-calendar-check"></i>
+                <span>Atendimentos</span>
+
+            </a>
+
+            <a href="receituario.html">
+
+                <i class="fa-regular fa-file-lines"></i>
+                <span>Receituário</span>
+
+            </a>
+
+            <a href="relatorios.html">
+
+                <i class="fa-regular fa-chart-bar"></i>
+                <span>Relatórios</span>
+
+            </a>
+
+            <a href="laudos.html">
+
+                <i class="fa-regular fa-file"></i>
+                <span>Laudos</span>
+
+            </a>
+
+            <a href="login.html">
+
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Sair</span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <div class="card-atendimentos">
+
+            <!-- TOPO -->
+
+            <div class="topo">
+
+                <h1>
+
+                    Gestão de Atendimentos
+
+                </h1>
+
+                <a
+                href="novo-atendimento.html"
+                class="btn-novo">
+
+                    NOVO ATENDIMENTO
+
+                </a>
+
+            </div>
+
+            <!-- FILTROS -->
+
+            <div class="filtros">
+
+                <div class="grupo-input">
+
+                    <input
+                    type="text"
+                    placeholder="Buscar atendimento...">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </div>
+
+                <select id="filtroDentista">
+
+    <option value="">
+        Todos os dentistas
+    </option>
+
+</select>
+
+<select id="filtroPrioridade">
+
+    <option value="">
+        Todas as prioridades
+    </option>
+
+</select>
+
+            </div>
+
+            <!-- DATAS -->
+
+            <div class="datas">
+
+                <div class="campo-data">
+
+                    <label>Data inicial</label>
+
+                    <div class="input-data">
+
+                        <input type="date">
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                    </div>
+
+                </div>
+
+                <div class="campo-data">
+
+                    <label>Data final</label>
+
+                    <div class="input-data">
+
+                        <input type="date">
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                    </div>
+
+                </div>
+
+                <button class="btn-filtrar">
+
+                    FILTRAR
+
+                </button>
+
+            </div>
+
+            <!-- TABELA -->
+
+            <div class="card-tabela">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Data</th>
+                            <th>Paciente</th>
+                            <th>Dentista</th>
+                            <th>Prioridade</th>
+                            <th>Ações</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="tbodyAtendimentos">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <!-- PAGINAÇÃO -->
+
+            <div class="paginacao">
+
+                <button>
+                    <i class="fa-solid fa-angles-left"></i>
+                </button>
+
+                <button>
+                    <i class="fa-solid fa-angle-left"></i>
+                </button>
+
+                <button class="ativo">
+                    1
+                </button>
+
+                <button>2</button>
+
+                <button>3</button>
+
+                <button>
+                    <i class="fa-solid fa-angle-right"></i>
+                </button>
+
+                <button>
+                    <i class="fa-solid fa-angles-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="js/atendimentos.js"></script>
+
+</body>
+</html>

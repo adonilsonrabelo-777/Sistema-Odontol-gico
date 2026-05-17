@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Detalhes do Paciente</title>
+
+<!-- ÍCONES -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- CSS -->
+
+<link rel="stylesheet"
+href="css/global.css">
+
+<link rel="stylesheet"
+href="css/detalhes-paciente.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <img
+            src="img/logo.png"
+            alt="Logo SaúdeTECH">
+
+        </div>
+
+        <nav class="menu">
+
+            <a href="dashboard-publico.html">
+
+                <i class="fa-solid fa-tv"></i>
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="menu-principal.html">
+
+                <i class="fa-solid fa-house"></i>
+                <span>Menu Principal</span>
+
+            </a>
+
+            <a
+            href="pacientes.html"
+            class="active">
+
+                <i class="fa-regular fa-user"></i>
+                <span>Pacientes</span>
+
+            </a>
+
+            <a href="atendimentos.html">
+
+                <i class="fa-regular fa-calendar-check"></i>
+                <span>Atendimentos</span>
+
+            </a>
+
+            <a href="receituario.html">
+
+                <i class="fa-regular fa-file-lines"></i>
+                <span>Receituário</span>
+
+            </a>
+
+            <a href="relatorios.html">
+
+                <i class="fa-regular fa-chart-bar"></i>
+                <span>Relatórios</span>
+
+            </a>
+
+            <a href="laudos.html">
+
+                <i class="fa-regular fa-file"></i>
+                <span>Laudos</span>
+
+            </a>
+
+            <a href="login.html">
+
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Sair</span>
+
+            </a>
+
+        </nav>
+
+    </aside>
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+        <div class="card-detalhes">
+
+            <!-- TOPO -->
+
+            <div class="topo">
+
+                <div>
+
+                    <h1>
+                        Detalhes do Paciente
+                    </h1>
+
+                    <p>
+                        Informações completas do paciente selecionado
+                    </p>
+
+                </div>
+
+                <a
+                href="pacientes.html"
+                class="btn-voltar">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Voltar
+
+                </a>
+
+            </div>
+
+            <!-- PERFIL -->
+
+            <div class="perfil">
+
+                <div class="foto">
+
+                    <i class="fa-regular fa-user"></i>
+
+                </div>
+
+                <div class="info-principal">
+
+                    <h2 id="nomePaciente">
+
+                        Carregando...
+
+                    </h2>
+
+                    <span
+                    id="statusPaciente"
+                    class="status ativo">
+
+                        Ativo
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <!-- GRID -->
+
+            <div class="grid-detalhes">
+
+                <!-- CARD -->
+
+                <div class="box">
+
+                    <h3>
+
+                        <i class="fa-regular fa-id-card"></i>
+
+                        Dados Pessoais
+
+                    </h3>
+
+                    <div class="campo">
+
+                        <label>CPF</label>
+
+                        <span id="cpfPaciente"></span>
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label>Telefone</label>
+
+                        <span id="telefonePaciente"></span>
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label>Data de Nascimento</label>
+
+                        <span id="nascimentoPaciente"></span>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD -->
+
+                <div class="box">
+
+                    <h3>
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        Endereço
+
+                    </h3>
+
+                    <div class="campo">
+
+                        <label>Endereço</label>
+
+                        <span id="enderecoPaciente"></span>
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label>Bairro</label>
+
+                        <span id="bairroPaciente"></span>
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label>Cidade</label>
+
+                        <span id="cidadePaciente"></span>
+
+                    </div>
+
+                </div>
+
+                <!-- CARD -->
+
+                <!-- CARD -->
+
+<div class="box">
+
+    <h3>
+
+        <i class="fa-solid fa-tooth"></i>
+
+        Histórico Odontológico
+
+    </h3>
+
+    <div class="campo">
+
+        <label>Último Atendimento</label>
+
+        <span id="ultimoAtendimento"></span>
+
+    </div>
+
+    <div class="campo">
+
+        <label>Dentista Responsável</label>
+
+        <span id="dentistaPaciente"></span>
+
+    </div>
+
+    <div class="campo">
+
+        <label>Procedimento Realizado</label>
+
+        <span id="procedimentoPaciente"></span>
+
+    </div>
+
+    <div class="campo">
+
+        <label>Próximo Retorno</label>
+
+        <span id="retornoPaciente"></span>
+
+    </div>
+
+    <div class="campo">
+
+        <label>Observações Odontológicas</label>
+
+        <span id="obsPaciente"></span>
+
+    </div>
+
+</div>
+
+            </div>
+
+            <!-- BOTÕES -->
+
+            <div class="acoes-bottom">
+
+                <button class="btn-editar">
+
+                    <i class="fa-regular fa-pen-to-square"></i>
+
+                    Editar Paciente
+
+                </button>
+
+                <button class="btn-imprimir">
+
+                    <i class="fa-solid fa-print"></i>
+
+                    Imprimir Ficha
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="js/detalhes-paciente.js"></script>
+
+</body>
+</html>

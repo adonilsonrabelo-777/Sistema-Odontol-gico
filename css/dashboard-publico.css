@@ -1,0 +1,662 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#edf5ff;
+    padding:10px;
+}
+
+/* CONTAINER */
+
+.painel-container{
+
+    background:#dff0ff;
+
+    border:1px solid #c7ddf5;
+
+    border-radius:8px;
+
+    min-height:100vh;
+
+    padding:10px;
+}
+
+/* TOPO */
+
+.topo{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:5px;
+     margin-top: 0px;
+}
+
+.titulo-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+}
+
+.logo img{
+
+    width: 110px; /* ajuste conforme o tamanho desejado */
+    height: 110px;
+    border-radius: 50%; /* transforma em círculo */
+    background-color: #fff; /* fundo branco */
+    padding: 5px; /* espaço interno para respirar */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* leve sombra para destaque */
+
+}
+
+
+.titulo-area h1{
+
+    color:#0055c5;
+
+    font-size:28px;
+
+    font-weight:bold;
+}
+
+.data-hora{
+
+    text-align:right;
+
+    color:#003f92;
+}
+
+.data-hora span{
+
+    display:block;
+
+    font-size:22px;
+}
+
+.data-hora strong{
+
+    font-size:38px;
+}
+
+/* TOPO CONTEÚDO */
+
+.conteudo-topo{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:12px;
+
+    margin-bottom:12px;
+}
+
+/* SENHA */
+
+.senha-atual-card{
+
+    background:#fff;
+
+    border-radius:8px;
+
+    padding:15px;
+
+    text-align:center;
+
+    border:1px solid #c9d9eb;
+}
+
+.senha-atual-card h2{
+
+    color:#333;
+
+    margin-bottom:0px;
+
+    font-size:30px;
+}
+
+.senha-atual{
+
+    font-size:75px;
+
+    font-weight:bold;
+
+    color:#0055c5;
+
+    margin-bottom:0px;
+
+}
+
+.senha-atual-card p{
+
+    font-size:32px;
+
+    color:#333;
+}
+
+/* CHAMADAS */
+
+.ultimas-chamadas{
+
+    background:#fff;
+
+    border-radius:8px;
+
+    padding:12px;
+
+    border:1px solid #c9d9eb;
+}
+
+.ultimas-chamadas h3{
+
+    color:#0055c5;
+
+    margin-bottom:5px;
+
+    font-size:18px;
+        text-align:center;
+
+}
+
+.lista-chamadas{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2px;
+}
+
+.linha-chamada{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    color:#222;
+   
+}
+
+/* FILA */
+
+.fila-card{
+
+    background:#fff;
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    border:1px solid #c9d9eb;
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+}
+
+thead{
+
+    background:#0055c5;
+
+    color:#fff;
+}
+
+thead th{
+
+    padding:5px;
+
+    font-size:18px;
+}
+
+tbody td{
+
+    padding:10px;
+
+    border-bottom:1px solid #e5e5e5;
+
+    font-size:16px;
+
+    color:#222;
+    text-align: center;
+}
+
+.prioridade{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    width:100%;
+
+}
+
+/* BOLINHAS */
+
+.bolinha{
+
+    width:16px;
+
+    height:16px;
+
+    border-radius:50%;
+    
+}
+
+.vermelho{
+    background:#ff3d3d;
+}
+
+.amarelo{
+    background:#ffb300;
+}
+
+.verde{
+    background:#12b85b;
+}
+
+/* RODAPÉ */
+
+.rodape{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+    padding: 0;
+}
+
+.rodape h2{
+
+    color:#222;
+
+    font-size:26px;
+   
+    margin-top:8px;
+
+    margin-bottom: -75px;
+
+}
+
+
+
+/* RESPONSIVO */
+
+@media(max-width:1200px){
+
+    .titulo-area h1{
+        font-size:22px;
+    }
+
+    .senha-atual{
+        font-size:70px;
+    }
+
+    .senha-atual-card p{
+        font-size:22px;
+    }
+
+    .linha-chamada{
+        font-size:22px;
+    }
+
+    tbody td{
+        font-size:18px;
+    }
+
+}
+
+@media(max-width:900px){
+
+    .conteudo-topo{
+        grid-template-columns:1fr;
+    }
+
+    .titulo-area h1{
+        font-size:18px;
+    }
+
+    .senha-atual{
+        font-size:60px;
+    }
+
+    .rodape h2{
+        font-size:24px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .topo{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .titulo-area{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .titulo-area h1{
+        font-size:16px;
+    }
+
+    .senha-atual{
+        font-size:50px;
+    }
+
+    .linha-chamada{
+        font-size:18px;
+    }
+
+    tbody td{
+        font-size:14px;
+    }
+
+}
+
+
+/* =========================
+   ANIMAÇÃO CARROSSEL
+========================= */
+
+.animacao{
+
+    animation: piscarSenha 1s ease;
+
+}
+
+@keyframes piscarSenha{
+
+    0%{
+        transform:scale(0.7);
+        opacity:0.3;
+    }
+
+    50%{
+        transform:scale(1.1);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(1);
+        opacity:1;
+    }
+
+}
+
+/* EFEITO NAS LINHAS */
+
+tbody tr{
+
+    transition:0.3s;
+
+}
+
+tbody tr:hover{
+
+    background:#f3f8ff;
+
+}
+
+/* =========================
+   SALA DE ATENDIMENTO
+========================= */
+
+.sala-atendimento{
+
+    margin-top:0px;
+
+    font-size:25px;
+
+    font-weight:bold;
+
+    color:#ffffff;
+
+    background:#0055c5;
+
+    display:inline-block;
+
+    padding:8px 20px;
+
+    border-radius:12px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+
+    animation:pulsarSala 2s infinite;
+
+}
+
+/* ANIMAÇÃO */
+
+@keyframes pulsarSala{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.05);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+/* =========================
+   PACIENTE ATUAL
+========================= */
+
+.paciente-atual{
+
+    margin-top:5px;
+
+    font-size:25px;
+
+    font-weight:bold;
+
+    color:#003b8e;
+
+    text-align:center;
+
+    animation:fadePaciente 1s ease;
+
+}
+
+@keyframes fadePaciente{
+
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   CARD CHAMADAS
+========================= */
+
+.linha-chamada{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:#f7fbff;
+
+    border:1px solid #dbe8f5;
+
+    border-radius:12px;
+
+    padding:6px 10px;
+
+    margin-bottom:3px;
+
+    transition:0.3s;
+
+}
+
+.linha-chamada:hover{
+
+    transform:translateX(4px);
+
+    background:#edf5ff;
+
+}
+
+/* ESQUERDA */
+
+.chamada-esquerda{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.senha-card{
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#0055c5;
+
+}
+
+.paciente-card{
+
+    font-size:14px;
+
+    color:#333;
+
+    margin-top:0px;
+    margin-bottom: 0px;
+
+}
+
+/* DIREITA */
+
+.chamada-direita{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-end;
+
+}
+
+.sala-card{
+
+    background:#0055c5;
+
+    color:#fff;
+
+    padding:4px 8px;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    margin-bottom:3px;
+
+}
+
+.hora-card{
+
+    font-size:12px;
+
+    color:#666;
+
+}
+
+/* =========================
+   BOTÃO FIXO INFERIOR DIREITO
+========================= */
+
+.btn-encerrar{
+
+    position:fixed;
+
+    bottom:20px;
+
+    right:20px;
+
+    z-index:999;
+
+    background:#d62828;
+
+    color:#fff;
+
+    border:none;
+
+    padding:14px 20px;
+
+    border-radius:50px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:0 4px 12px rgba(0,0,0,0.25);
+
+    transition:0.3s;
+
+}
+
+/* HOVER */
+
+.btn-encerrar:hover{
+
+    transform:scale(1.05);
+
+    background:#b71c1c;
+
+}
+
+/* ÍCONE */
+
+.btn-encerrar i{
+
+    margin-right:8px;
+
+}

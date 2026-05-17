@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Recuperar Senha</title>
+
+    <!-- Ícones -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+    href="css/recuperar-senha.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- LADO ESQUERDO -->
+
+        <div class="left-side">
+
+            <!-- IMAGEM -->
+
+            <div class="image-area">
+
+                <img src="img/Logo+Cadeado.png"
+                alt="Logo SaúdeTECH + Cadeado">
+
+            </div>
+
+        </div>
+
+        <!-- LADO DIREITO -->
+
+        <div class="right-side">
+
+            <div class="form-container">
+
+                <h2>
+                    Recuperar senha
+                </h2>
+
+                <p class="descricao">
+
+                    Informe seu e-mail cadastrado para
+                    receber as instruções de redefinição
+                    de senha.
+
+                </p>
+
+                <!-- FORMULÁRIO -->
+
+                <form id="recuperarForm">
+
+                    <!-- INPUT -->
+
+                    <div class="input-group">
+
+                        <label>
+                            E-mail cadastrado
+                        </label>
+
+                        <div class="input-box">
+
+                            <i class="fa-regular fa-envelope"></i>
+
+                            <input
+                            type="email"
+                            id="email"
+                            placeholder="Digite seu e-mail"
+                            required>
+
+                        </div>
+
+                    </div>
+
+                    <!-- BOTÃO -->
+
+                    <button
+                    type="submit"
+                    class="btn-enviar">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        ENVIAR INSTRUÇÕES
+
+                    </button>
+
+                </form>
+
+                <!-- DIVISOR -->
+
+                <div class="divisor">
+
+                    <span></span>
+
+                    <p>ou</p>
+
+                    <span></span>
+
+                </div>
+
+                <!-- VOLTAR -->
+
+                <a href="login.html"
+                class="btn-voltar">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    VOLTAR PARA O LOGIN
+
+                </a>
+
+                <!-- ALERTA -->
+
+                <div class="alerta">
+
+                    <div class="icone">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Importante
+                        </strong>
+
+                        <p>
+
+                            Verifique sua caixa de entrada
+                            e spam após o envio do e-mail.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JS -->
+
+    <script src="js/recuperar-senha.js"></script>
+
+</body>
+</html>
