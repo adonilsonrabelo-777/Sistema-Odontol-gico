@@ -1,35 +1,28 @@
-/* =========================
-   LOGIN DO SISTEMA
-========================= */
-
-// FORMULÁRIO
 const form = document.getElementById("loginForm");
 
-// EVENTO DE LOGIN
-form.addEventListener("submit", function(event){
-
-    // IMPEDE RECARREGAR A PÁGINA
+form.addEventListener("submit", async function(event) {
     event.preventDefault();
 
-    // CAPTURA USUÁRIO E SENHA
-    const usuario = document.getElementById("usuario").value.trim();
-
+    const email = document.getElementById("usuario").value.trim();
     const senha = document.getElementById("senha").value.trim();
 
-    // VALIDAÇÃO SIMPLES
-    if(usuario === "admin" && senha === "1234"){
+    try {
+        const response = await fetch('http://localhost:3000/api/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, senha })
+        });
 
-        // MENSAGEM
-        alert("Login realizado com sucesso!");
+        const data = await response.json();
 
-        // REDIRECIONA PARA MENU PRINCIPAL
-        window.location.href = "menu-principal.html";
-
-    }else{
-
-        // ERRO
-        alert("Usuário ou senha inválidos!");
-
+        if (response.ok) {
+            alert("Bem-vindo, " + data.usuario.nome + "!");
+            window.location.href = "menu-principal.html";
+        } else {
+            alert(data.mensagem || "Erro ao fazer login");
+        }
+    } catch (error) {
+        console.error("Erro:", error);
+        alert("Erro ao conectar com o servidor. Verifique se o backend está rodando!");
     }
-
 });

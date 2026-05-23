@@ -9,8 +9,8 @@ app.use(express.json());
 // 1. Conexão com o Banco de Dados OdontoWeb
 const db = mysql.createConnection({
     host: 'localhost',
-    user: 'root', // Usuário padrão do XAMPP/MySQL
-    password: '@Pkf414745', // DEIXE VAZIO se for XAMPP, ou coloque sua senha do banco
+    user: 'admin_odonto',    // Mude de 'root' para 'admin_odonto'
+    password: '@Pkf414745', 
     database: 'odontoweb'
 });
 
