@@ -5,271 +5,381 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Relatórios</title>
 
     <!-- ÍCONES -->
 
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- CSS -->
 
-    <link rel="stylesheet"
-    href="css/global.css">
+    <link rel="stylesheet" href="css/global.css">
 
-    <link rel="stylesheet"
-    href="css/relatorios.css">
+    <link rel="stylesheet" href="css/relatorios.css">
 
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <!-- SIDEBAR -->
+        <!-- SIDEBAR -->
 
-    <aside class="sidebar">
+        <aside class="sidebar">
 
-        <!-- LOGO -->
+            <!-- LOGO -->
 
-        <div class="logo">
+            <div class="logo">
 
-            <img
-            src="img/logo.png"
-            alt="Logo">
+                <img src="img/logo.png" alt="Logo">
 
-        </div>
+            </div>
 
-        <!-- MENU -->
+            <!-- MENU -->
 
-        <nav class="menu">
+            <nav class="menu">
 
-            <a href="dashboard-publico.html">
+                <a href="dashboard-publico.html">
 
-                <i class="fa-solid fa-tv"></i>
+                    <i class="fa-solid fa-tv"></i>
 
-                <span>Dashboard</span>
+                    <span>Dashboard</span>
 
-            </a>
+                </a>
 
-            <a href="menu-principal.html">
+                <a href="menu-principal.html">
 
-                <i class="fa-solid fa-house"></i>
+                    <i class="fa-solid fa-house"></i>
 
-                <span>Menu Principal</span>
+                    <span>Menu Principal</span>
 
-            </a>
+                </a>
 
-            <a href="pacientes.html">
+                <a href="pacientes.html">
 
-                <i class="fa-regular fa-user"></i>
+                    <i class="fa-regular fa-user"></i>
 
-                <span>Pacientes</span>
+                    <span>Pacientes</span>
 
-            </a>
+                </a>
 
-            <a href="atendimentos.html">
+                <a href="atendimentos.html">
 
-                <i class="fa-regular fa-calendar-check"></i>
+                    <i class="fa-regular fa-calendar-check"></i>
 
-                <span>Atendimentos</span>
+                    <span>Atendimentos</span>
 
-            </a>
+                </a>
 
-            <a href="receituario.html">
+                <a href="receituario.html">
 
-                <i class="fa-regular fa-file-lines"></i>
+                    <i class="fa-regular fa-file-lines"></i>
 
-                <span>Receituário</span>
+                    <span>Receituário</span>
 
-            </a>
+                </a>
 
-            <!-- ATIVO -->
+                <!-- ATIVO -->
 
-            <a
-            href="relatorios.html"
-            class="active">
+                <a href="relatorios.html" class="active">
 
-                <i class="fa-regular fa-chart-bar"></i>
+                    <i class="fa-regular fa-chart-bar"></i>
 
-                <span>Relatórios</span>
+                    <span>Relatórios</span>
 
-            </a>
+                </a>
 
-            <a href="laudos.html">
+                <a href="laudos.html">
 
-                <i class="fa-regular fa-file"></i>
+                    <i class="fa-regular fa-file"></i>
 
-                <span>Laudos</span>
+                    <span>Laudos</span>
 
-            </a>
+                </a>
 
-            <a href="login.html">
+                <a href="login.html">
 
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
 
-                <span>Sair</span>
+                    <span>Sair</span>
 
-            </a>
+                </a>
 
-        </nav>
+            </nav>
 
-    </aside>
+        </aside>
 
-    <!-- MAIN -->
+        <!-- MAIN -->
 
-    <main class="main">
+        <main class="main">
 
-        <!-- CARD -->
+            <!-- CARD -->
 
-        <div class="card-relatorios">
+            <div class="card-relatorios">
 
-            <!-- TÍTULO -->
+                <!-- TÍTULO -->
 
-            <h1>
+                <h1>
 
-                Relatórios
+                    Relatórios
 
-            </h1>
+                </h1>
 
-            <!-- FORM -->
+                <!-- FORM -->
 
-            <form id="formRelatorio">
+                <form id="formRelatorio">
 
-                <!-- LINHA -->
+                    <!-- LINHA -->
 
-                <div class="linha">
+                    <div class="linha">
 
-                    <!-- TIPO -->
+                        <!-- TIPO -->
 
-                    <div class="grupo">
+                        <div class="grupo">
 
-                        <label>
+                            <label>
 
-                            Tipo de Relatório
+                                Tipo de Relatório
 
-                        </label>
+                            </label>
 
-                        <select id="tipoRelatorio">
+                            <select id="tipoRelatorio">
 
-                            <option value="">
-                                Selecione o relatório
-                            </option>
+                                <option value="">
+                                    Selecione o relatório
+                                </option>
 
-                            <option>
+                                <option>
+                                    Atendimentos por período
+                                </option>
+
+                                <option>
+                                    Atendimentos por dentista
+                                </option>
+
+                                <option>
+                                    Pacientes atendidos
+                                </option>
+
+                                <option>
+                                    Procedimentos realizados
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!-- PERÍODO -->
+
+                        <div class="grupo">
+
+                            <label>
+
+                                Período
+
+                            </label>
+
+                            <select id="periodo">
+
+                                <option>
+                                    Este mês
+                                </option>
+
+                                <option>
+                                    Últimos 7 dias
+                                </option>
+
+                                <option>
+                                    Últimos 30 dias
+                                </option>
+
+                                <option>
+                                    Este ano
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                    <!-- DATAS -->
+
+                    <div class="linha linha-data">
+
+                        <!-- DATA INICIAL -->
+
+                        <div class="grupo">
+
+                            <label>
+
+                                Data inicial
+
+                            </label>
+
+                            <div class="input-data">
+
+                                <input type="date" id="dataInicial">
+
+                                <i class="fa-regular fa-calendar"></i>
+
+                            </div>
+
+                        </div>
+
+                        <!-- DATA FINAL -->
+
+                        <div class="grupo">
+
+                            <label>
+
+                                Data final
+
+                            </label>
+
+                            <div class="input-data">
+
+                                <input type="date" id="dataFinal">
+
+                                <i class="fa-regular fa-calendar"></i>
+
+                            </div>
+
+                        </div>
+
+                        <!-- BOTÃO -->
+
+                        <div class="grupo grupo-botao">
+
+                            <button type="submit" class="btn-gerar">
+
+                                GERAR RELATÓRIO
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+                <!-- RELATÓRIOS -->
+
+                <div class="lista-relatorios">
+
+                    <h2>
+
+                        Relatórios disponíveis
+
+                    </h2>
+
+                    <!-- ITEM -->
+
+                    <div class="item-relatorio">
+
+                        <div class="info">
+
+                            <i class="fa-regular fa-file-lines verde"></i>
+
+                            <span>
                                 Atendimentos por período
-                            </option>
+                            </span>
 
-                            <option>
+                        </div>
+
+                        <button onclick="gerarRelatorio('Atendimentos por período')">
+
+                            GERAR
+
+                        </button>
+
+                    </div>
+
+                    <!-- ITEM -->
+
+                    <div class="item-relatorio">
+
+                        <div class="info">
+
+                            <i class="fa-regular fa-file-lines azul"></i>
+
+                            <span>
                                 Atendimentos por dentista
-                            </option>
+                            </span>
 
-                            <option>
+                        </div>
+
+                        <button onclick="gerarRelatorio('Atendimentos por dentista')">
+
+                            GERAR
+
+                        </button>
+
+                    </div>
+
+                    <!-- ITEM -->
+
+                    <div class="item-relatorio">
+
+                        <div class="info">
+
+                            <i class="fa-regular fa-file-lines roxo"></i>
+
+                            <span>
                                 Pacientes atendidos
-                            </option>
+                            </span>
 
-                            <option>
+                        </div>
+
+                        <button onclick="gerarRelatorio('Pacientes atendidos')">
+
+                            GERAR
+
+                        </button>
+
+                    </div>
+
+                    <!-- ITEM -->
+
+                    <div class="item-relatorio">
+
+                        <div class="info">
+
+                            <i class="fa-regular fa-file-lines rosa"></i>
+
+                            <span>
                                 Procedimentos realizados
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                    <!-- PERÍODO -->
-
-                    <div class="grupo">
-
-                        <label>
-
-                            Período
-
-                        </label>
-
-                        <select id="periodo">
-
-                            <option>
-                                Este mês
-                            </option>
-
-                            <option>
-                                Últimos 7 dias
-                            </option>
-
-                            <option>
-                                Últimos 30 dias
-                            </option>
-
-                            <option>
-                                Este ano
-                            </option>
-
-                        </select>
-
-                    </div>
-
-                </div>
-
-                <!-- DATAS -->
-
-                <div class="linha linha-data">
-
-                    <!-- DATA INICIAL -->
-
-                    <div class="grupo">
-
-                        <label>
-
-                            Data inicial
-
-                        </label>
-
-                        <div class="input-data">
-
-                            <input
-                            type="date"
-                            id="dataInicial">
-
-                            <i class="fa-regular fa-calendar"></i>
+                            </span>
 
                         </div>
 
+                        <button onclick="gerarRelatorio('Procedimentos realizados')">
+
+                            GERAR
+
+                        </button>
+
                     </div>
 
-                    <!-- DATA FINAL -->
+                    <!-- ITEM -->
 
-                    <div class="grupo">
+                    <div class="item-relatorio">
 
-                        <label>
+                        <div class="info">
 
-                            Data final
+                            <i class="fa-regular fa-file-lines laranja"></i>
 
-                        </label>
-
-                        <div class="input-data">
-
-                            <input
-                            type="date"
-                            id="dataFinal">
-
-                            <i class="fa-regular fa-calendar"></i>
+                            <span>
+                                Classificação de prioridades
+                            </span>
 
                         </div>
 
-                    </div>
+                        <button onclick="gerarRelatorio('Classificação de prioridades')">
 
-                    <!-- BOTÃO -->
-
-                    <div class="grupo grupo-botao">
-
-                        <button
-                        type="submit"
-                        class="btn-gerar">
-
-                            GERAR RELATÓRIO
+                            GERAR
 
                         </button>
 
@@ -277,137 +387,14 @@
 
                 </div>
 
-            </form>
-
-            <!-- RELATÓRIOS -->
-
-            <div class="lista-relatorios">
-
-                <h2>
-
-                    Relatórios disponíveis
-
-                </h2>
-
-                <!-- ITEM -->
-
-                <div class="item-relatorio">
-
-                    <div class="info">
-
-                        <i class="fa-regular fa-file-lines verde"></i>
-
-                        <span>
-                            Atendimentos por período
-                        </span>
-
-                    </div>
-
-                    <button onclick="gerarRelatorio('Atendimentos por período')">
-
-                        GERAR
-
-                    </button>
-
-                </div>
-
-                <!-- ITEM -->
-
-                <div class="item-relatorio">
-
-                    <div class="info">
-
-                        <i class="fa-regular fa-file-lines azul"></i>
-
-                        <span>
-                            Atendimentos por dentista
-                        </span>
-
-                    </div>
-
-                    <button onclick="gerarRelatorio('Atendimentos por dentista')">
-
-                        GERAR
-
-                    </button>
-
-                </div>
-
-                <!-- ITEM -->
-
-                <div class="item-relatorio">
-
-                    <div class="info">
-
-                        <i class="fa-regular fa-file-lines roxo"></i>
-
-                        <span>
-                            Pacientes atendidos
-                        </span>
-
-                    </div>
-
-                    <button onclick="gerarRelatorio('Pacientes atendidos')">
-
-                        GERAR
-
-                    </button>
-
-                </div>
-
-                <!-- ITEM -->
-
-                <div class="item-relatorio">
-
-                    <div class="info">
-
-                        <i class="fa-regular fa-file-lines rosa"></i>
-
-                        <span>
-                            Procedimentos realizados
-                        </span>
-
-                    </div>
-
-                    <button onclick="gerarRelatorio('Procedimentos realizados')">
-
-                        GERAR
-
-                    </button>
-
-                </div>
-
-                <!-- ITEM -->
-
-                <div class="item-relatorio">
-
-                    <div class="info">
-
-                        <i class="fa-regular fa-file-lines laranja"></i>
-
-                        <span>
-                            Classificação de prioridades
-                        </span>
-
-                    </div>
-
-                    <button onclick="gerarRelatorio('Classificação de prioridades')">
-
-                        GERAR
-
-                    </button>
-
-                </div>
-
             </div>
 
-        </div>
+        </main>
 
-    </main>
+    </div>
 
-</div>
-
-<script src="js/relatorios.js"></script>
+    <script src="js/relatorios.js"></script>
 
 </body>
+
 </html>

@@ -1,66 +1,66 @@
 /* CARD */
 
-.card-receituario{
+.card-receituario {
 
-    background:#ffffff;
+    background: #ffffff;
 
-    border-radius:14px;
+    border-radius: 14px;
 
-    border:1px solid #dfe6f0;
+    border: 1px solid #dfe6f0;
 
-    padding:25px;
+    padding: 25px;
 
-    max-width:850px;
+    max-width: 850px;
 
 }
 
 /* TÍTULO */
 
-.card-receituario h1{
+.card-receituario h1 {
 
-    font-size:30px;
+    font-size: 30px;
 
-    color:#1e293b;
+    color: #1e293b;
 
-    margin-bottom:25px;
+    margin-bottom: 25px;
 
 }
 
 /* LINHAS */
 
-.linha{
+.linha {
 
-    display:grid;
+    display: grid;
 
-    grid-template-columns:1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
-    gap:20px;
+    gap: 20px;
 
-    margin-bottom:20px;
+    margin-bottom: 20px;
 
 }
 
 /* GRUPOS */
 
-.grupo{
+.grupo {
 
-    margin-bottom:20px;
+    margin-bottom: 20px;
 
 }
 
 /* LABEL */
 
-.grupo label{
+.grupo label {
 
-    display:block;
+    display: block;
 
-    margin-bottom:10px;
+    margin-bottom: 10px;
 
-    font-size:15px;
+    font-size: 15px;
 
-    font-weight:600;
+    font-weight: 600;
 
-    color:#1e293b;
+    color: #1e293b;
 
 }
 
@@ -68,155 +68,155 @@
 
 select,
 textarea,
-input{
+input {
 
-    width:100%;
+    width: 100%;
 
-    border:1px solid #dbe2ea;
+    border: 1px solid #dbe2ea;
 
-    border-radius:8px;
+    border-radius: 8px;
 
-    outline:none;
+    outline: none;
 
-    font-size:14px;
+    font-size: 14px;
 
-    color:#334155;
+    color: #334155;
 
 }
 
 /* SELECT */
 
-select{
+select {
 
-    height:48px;
+    height: 48px;
 
-    padding:0 15px;
+    padding: 0 15px;
 
 }
 
 /* DATA */
 
-.input-data{
+.input-data {
 
-    position:relative;
-
-}
-
-.input-data input{
-
-    height:48px;
-
-    padding:0 40px 0 15px;
+    position: relative;
 
 }
 
-.input-data i{
+.input-data input {
 
-    position:absolute;
+    height: 48px;
 
-    right:15px;
+    padding: 0 40px 0 15px;
 
-    top:16px;
+}
 
-    color:#666;
+.input-data i {
+
+    position: absolute;
+
+    right: 15px;
+
+    top: 16px;
+
+    color: #666;
 
 }
 
 /* TEXTAREA */
 
-textarea{
+textarea {
 
-    height:120px;
+    height: 120px;
 
-    resize:none;
+    resize: none;
 
-    padding:15px;
+    padding: 15px;
 
-    line-height:1.5;
+    line-height: 1.5;
 
 }
 
 /* BOTÕES */
 
-.acoes{
+.acoes {
 
-    display:flex;
+    display: flex;
 
-    justify-content:flex-end;
+    justify-content: flex-end;
 
-    gap:15px;
+    gap: 15px;
 
-    margin-top:10px;
+    margin-top: 10px;
 
 }
 
 /* LIMPAR */
 
-.btn-limpar{
+.btn-limpar {
 
-    width:120px;
+    width: 120px;
 
-    height:44px;
+    height: 44px;
 
-    border:1px solid #dbe2ea;
+    border: 1px solid #dbe2ea;
 
-    border-radius:8px;
+    border-radius: 8px;
 
-    background:#fff;
+    background: #fff;
 
-    color:#1e293b;
+    color: #1e293b;
 
-    font-weight:bold;
+    font-weight: bold;
 
-    cursor:pointer;
+    cursor: pointer;
 
-    transition:0.3s;
+    transition: 0.3s;
 
 }
 
-.btn-limpar:hover{
+.btn-limpar:hover {
 
-    background:#f1f5f9;
+    background: #f1f5f9;
 
 }
 
 /* SALVAR */
 
-.btn-salvar{
+.btn-salvar {
 
-    width:190px;
+    width: 190px;
 
-    height:44px;
+    height: 44px;
 
-    border:none;
+    border: none;
 
-    border-radius:8px;
+    border-radius: 8px;
 
-    background:#17b26a;
+    background: #17b26a;
 
-    color:#fff;
+    color: #fff;
 
-    font-weight:bold;
+    font-weight: bold;
 
-    cursor:pointer;
+    cursor: pointer;
 
-    transition:0.3s;
+    transition: 0.3s;
 
 }
 
-.btn-salvar:hover{
+.btn-salvar:hover {
 
-    background:#12965a;
+    background: #12965a;
 
 }
 
 /* RESPONSIVO */
 
-@media(max-width:768px){
+@media(max-width:768px) {
 
-    .linha{
+    .linha {
 
-        grid-template-columns:1fr;
+        grid-template-columns: 1fr;
 
     }
 

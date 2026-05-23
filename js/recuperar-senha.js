@@ -3,27 +3,27 @@
 ========================= */
 
 // AGUARDA CARREGAR A PÁGINA
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
 
     // FORMULÁRIO
     const form = document.getElementById("recuperarForm");
 
     // VERIFICA SE EXISTE
-    if(form){
+    if (form) {
 
-        form.addEventListener("submit", function(event){
+        form.addEventListener("submit", function (event) {
 
             // IMPEDE RECARREGAR
             event.preventDefault();
 
             // CAPTURA EMAIL
             const email = document
-            .getElementById("email")
-            .value
-            .trim();
+                .getElementById("email")
+                .value
+                .trim();
 
             // VALIDAÇÃO
-            if(email === ""){
+            if (email === "") {
 
                 alert("Por favor, informe seu e-mail.");
 
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function(){
             document.getElementById("email").value = "";
 
             // REDIRECIONA PARA LOGIN
-            setTimeout(function(){
+            setTimeout(function () {
 
                 window.location.href = "login.html";
 
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
         });
 
-    }else{
+    } else {
 
         console.error(
             "Formulário recuperarForm não encontrado."

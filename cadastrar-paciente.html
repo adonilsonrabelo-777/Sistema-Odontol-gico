@@ -5,352 +5,315 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Cadastrar Paciente</title>
 
     <!-- ÍCONES -->
 
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- CSS -->
 
-    <link rel="stylesheet"
-    href="css/global.css">
+    <link rel="stylesheet" href="css/global.css">
 
-    <link rel="stylesheet"
-    href="css/cadastrar-paciente.css">
+    <link rel="stylesheet" href="css/cadastrar-paciente.css">
 
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <!-- SIDEBAR -->
+        <!-- SIDEBAR -->
 
-    <aside class="sidebar">
+        <aside class="sidebar">
 
-        <!-- LOGO -->
+            <!-- LOGO -->
 
-        <div class="logo">
+            <div class="logo">
 
-            <img
-            src="img/logo.png"
-            alt="Logo">
+                <img src="img/logo.png" alt="Logo">
 
 
-        </div>
+            </div>
 
-        <!-- MENU -->
+            <!-- MENU -->
 
-        <nav class="menu">
+            <nav class="menu">
 
-            <a href="dashboard-publico.html">
+                <a href="dashboard-publico.html">
 
-                <i class="fa-solid fa-tv"></i>
+                    <i class="fa-solid fa-tv"></i>
 
-                <span>Dashboard</span>
+                    <span>Dashboard</span>
 
-            </a>
+                </a>
 
-            <a href="menu-principal.html">
+                <a href="menu-principal.html">
 
-                <i class="fa-solid fa-house"></i>
+                    <i class="fa-solid fa-house"></i>
 
-                <span>Menu Principal</span>
+                    <span>Menu Principal</span>
 
-            </a>
+                </a>
 
-            <a
-            href="pacientes.html"
-            class="active">
+                <a href="pacientes.html" class="active">
 
-                <i class="fa-regular fa-user"></i>
+                    <i class="fa-regular fa-user"></i>
 
-                <span>Pacientes</span>
+                    <span>Pacientes</span>
 
-            </a>
+                </a>
 
-            <a href="atendimentos.html">
+                <a href="atendimentos.html">
 
-                <i class="fa-regular fa-calendar-check"></i>
+                    <i class="fa-regular fa-calendar-check"></i>
 
-                <span>Atendimentos</span>
+                    <span>Atendimentos</span>
 
-            </a>
+                </a>
 
-            <a href="receituario.html">
+                <a href="receituario.html">
 
-                <i class="fa-regular fa-file-lines"></i>
+                    <i class="fa-regular fa-file-lines"></i>
 
-                <span>Receituário</span>
+                    <span>Receituário</span>
 
-            </a>
+                </a>
 
-            <a href="relatorios.html">
+                <a href="relatorios.html">
 
-                <i class="fa-regular fa-chart-bar"></i>
+                    <i class="fa-regular fa-chart-bar"></i>
 
-                <span>Relatórios</span>
+                    <span>Relatórios</span>
 
-            </a>
+                </a>
 
-            <a href="laudos.html">
+                <a href="laudos.html">
 
-                <i class="fa-regular fa-file"></i>
+                    <i class="fa-regular fa-file"></i>
 
-                <span>Laudos</span>
+                    <span>Laudos</span>
 
-            </a>
+                </a>
 
-            <a href="login.html">
+                <a href="login.html">
 
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
 
-                <span>Sair</span>
+                    <span>Sair</span>
 
-            </a>
+                </a>
 
-        </nav>
+            </nav>
 
-    </aside>
+        </aside>
 
-    <!-- MAIN -->
+        <!-- MAIN -->
 
-    <main class="main">
+        <main class="main">
 
-        <!-- CARD -->
+            <!-- CARD -->
 
-        <div class="card-cadastro">
+            <div class="card-cadastro">
 
-            <!-- TÍTULO -->
+                <!-- TÍTULO -->
 
-            <h1>
+                <h1>
 
-                Cadastrar Paciente
+                    Cadastrar Paciente
 
-            </h1>
+                </h1>
 
-            <!-- FORM -->
+                <!-- FORM -->
 
-            <form id="formPaciente">
+                <form id="formPaciente">
 
-                <!-- LINHA 1 -->
+                    <!-- LINHA 1 -->
 
-                <div class="linha">
+                    <div class="linha">
 
-                    <!-- NOME -->
+                        <!-- NOME -->
 
-                    <div class="grupo">
+                        <div class="grupo">
 
-                        <label>
+                            <label>
 
-                            Nome Completo
+                                Nome Completo
 
-                        </label>
+                            </label>
 
-                        <input
-                        type="text"
-                        id="nome"
-                        placeholder="Digite o nome completo">
+                            <input type="text" id="nome" placeholder="Digite o nome completo">
 
-                    </div>
+                        </div>
 
-                    <!-- NASCIMENTO -->
+                        <!-- NASCIMENTO -->
 
-                    <div class="grupo">
+                        <div class="grupo">
 
-                        <label>
+                            <label>
 
-                            Data de Nascimento
+                                Data de Nascimento
 
-                        </label>
+                            </label>
 
-                        <div class="input-data">
+                            <div class="input-data">
 
-                            <input
-                            type="date"
-                            id="nascimento">
+                                <input type="date" id="nascimento">
 
-                            <i class="fa-regular fa-calendar"></i>
+                                <i class="fa-regular fa-calendar"></i>
+
+                            </div>
 
                         </div>
 
                     </div>
 
-                </div>
+                    <!-- LINHA 2 -->
 
-                <!-- LINHA 2 -->
+                    <div class="linha">
 
-                <div class="linha">
+                        <!-- CPF -->
 
-                    <!-- CPF -->
+                        <div class="grupo">
+
+                            <label>
+
+                                CPF
+
+                            </label>
+
+                            <input type="text" id="cpf" placeholder="000.000.000-00">
+
+                        </div>
+
+                        <!-- TELEFONE -->
+
+                        <div class="grupo">
+
+                            <label>
+
+                                Telefone
+
+                            </label>
+
+                            <input type="text" id="telefone" placeholder="(00) 00000-0000">
+
+                        </div>
+
+                    </div>
+
+                    <!-- LINHA 3 -->
+
+                    <div class="linha">
+
+                        <!-- ENDEREÇO -->
+
+                        <div class="grupo">
+
+                            <label>
+
+                                Endereço
+
+                            </label>
+
+                            <input type="text" id="endereco" placeholder="Digite o endereço">
+
+                        </div>
+
+                        <!-- BAIRRO -->
+
+                        <div class="grupo">
+
+                            <label>
+
+                                Bairro
+
+                            </label>
+
+                            <input type="text" id="bairro" placeholder="Digite o bairro">
+
+                        </div>
+
+                    </div>
+
+                    <!-- LINHA 4 -->
+
+                    <div class="linha">
+
+                        <!-- CARTÃO SUS -->
+
+                        <div class="grupo">
+
+                            <label>
+
+                                Cartão SUS
+
+                            </label>
+
+                            <input type="text" id="sus" placeholder="0000 0000 0000 0000">
+
+                        </div>
+
+                        <!-- EMAIL -->
+
+                        <div class="grupo">
+
+                            <label>
+
+                                E-mail
+
+                            </label>
+
+                            <input type="email" id="email" placeholder="Digite o e-mail">
+
+                        </div>
+
+                    </div>
+
+                    <!-- RESPONSÁVEL -->
 
                     <div class="grupo">
 
                         <label>
 
-                            CPF
+                            Responsável (se menor)
 
                         </label>
 
-                        <input
-                        type="text"
-                        id="cpf"
-                        placeholder="000.000.000-00">
+                        <input type="text" id="responsavel" placeholder="Digite o nome do responsável">
 
                     </div>
 
-                    <!-- TELEFONE -->
+                    <!-- BOTÕES -->
 
-                    <div class="grupo">
+                    <div class="acoes">
 
-                        <label>
+                        <button type="reset" class="btn-cancelar">
 
-                            Telefone
+                            CANCELAR
 
-                        </label>
+                        </button>
 
-                        <input
-                        type="text"
-                        id="telefone"
-                        placeholder="(00) 00000-0000">
+                        <button type="submit" class="btn-salvar">
 
-                    </div>
+                            SALVAR
 
-                </div>
-
-                <!-- LINHA 3 -->
-
-                <div class="linha">
-
-                    <!-- ENDEREÇO -->
-
-                    <div class="grupo">
-
-                        <label>
-
-                            Endereço
-
-                        </label>
-
-                        <input
-                        type="text"
-                        id="endereco"
-                        placeholder="Digite o endereço">
+                        </button>
 
                     </div>
 
-                    <!-- BAIRRO -->
+                </form>
 
-                    <div class="grupo">
+            </div>
 
-                        <label>
+        </main>
 
-                            Bairro
+    </div>
 
-                        </label>
-
-                        <input
-                        type="text"
-                        id="bairro"
-                        placeholder="Digite o bairro">
-
-                    </div>
-
-                </div>
-
-                <!-- LINHA 4 -->
-
-                <div class="linha">
-
-                    <!-- CARTÃO SUS -->
-
-                    <div class="grupo">
-
-                        <label>
-
-                            Cartão SUS
-
-                        </label>
-
-                        <input
-                        type="text"
-                        id="sus"
-                        placeholder="0000 0000 0000 0000">
-
-                    </div>
-
-                    <!-- EMAIL -->
-
-                    <div class="grupo">
-
-                        <label>
-
-                            E-mail
-
-                        </label>
-
-                        <input
-                        type="email"
-                        id="email"
-                        placeholder="Digite o e-mail">
-
-                    </div>
-
-                </div>
-
-                <!-- RESPONSÁVEL -->
-
-                <div class="grupo">
-
-                    <label>
-
-                        Responsável (se menor)
-
-                    </label>
-
-                    <input
-                    type="text"
-                    id="responsavel"
-                    placeholder="Digite o nome do responsável">
-
-                </div>
-
-                <!-- BOTÕES -->
-
-                <div class="acoes">
-
-                    <button
-                    type="reset"
-                    class="btn-cancelar">
-
-                        CANCELAR
-
-                    </button>
-
-                    <button
-                    type="submit"
-                    class="btn-salvar">
-
-                        SALVAR
-
-                    </button>
-
-                </div>
-
-            </form>
-
-        </div>
-
-    </main>
-
-</div>
-
-<script src="js/cadastrar-paciente.js"></script>
+    <script src="js/cadastrar-paciente.js"></script>
 
 </body>
+
 </html>

@@ -3,9 +3,9 @@
 ========================= */
 
 const form =
-document.getElementById(
-    'formLaudo'
-);
+    document.getElementById(
+        'formLaudo'
+    );
 
 /* =========================
    ENVIAR
@@ -13,40 +13,40 @@ document.getElementById(
 
 form.addEventListener(
     'submit',
-    function(event){
+    function (event) {
 
         event.preventDefault();
 
         /* CAMPOS */
 
         const paciente =
-        document.getElementById(
-            'paciente'
-        ).value;
+            document.getElementById(
+                'paciente'
+            ).value;
 
         const data =
-        document.getElementById(
-            'data'
-        ).value;
+            document.getElementById(
+                'data'
+            ).value;
 
         const tipo =
-        document.getElementById(
-            'tipoLaudo'
-        ).value;
+            document.getElementById(
+                'tipoLaudo'
+            ).value;
 
         const descricao =
-        document.getElementById(
-            'descricao'
-        ).value;
+            document.getElementById(
+                'descricao'
+            ).value;
 
         /* VALIDAÇÃO */
 
-        if(
+        if (
             paciente === '' ||
             data === '' ||
             tipo === '' ||
             descricao === ''
-        ){
+        ) {
 
             alert(
                 'Preencha todos os campos.'

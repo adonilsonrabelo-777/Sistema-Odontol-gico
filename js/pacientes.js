@@ -5,43 +5,43 @@
 const pacientes = [
 
     {
-        id:1,
-        nome:'Maria da Silva',
-        cpf:'000.000.000-00',
-        telefone:'(00) 00000-0000',
-        status:'Ativo'
+        id: 1,
+        nome: 'Maria da Silva',
+        cpf: '000.000.000-00',
+        telefone: '(00) 00000-0000',
+        status: 'Ativo'
     },
 
     {
-        id:2,
-        nome:'João Pedro Souza',
-        cpf:'111.111.111-11',
-        telefone:'(11) 11111-1111',
-        status:'Ativo'
+        id: 2,
+        nome: 'João Pedro Souza',
+        cpf: '111.111.111-11',
+        telefone: '(11) 11111-1111',
+        status: 'Ativo'
     },
 
     {
-        id:3,
-        nome:'Ana Paula Santos',
-        cpf:'222.222.222-22',
-        telefone:'(22) 22222-2222',
-        status:'Ativo'
+        id: 3,
+        nome: 'Ana Paula Santos',
+        cpf: '222.222.222-22',
+        telefone: '(22) 22222-2222',
+        status: 'Ativo'
     },
 
     {
-        id:4,
-        nome:'Carlos Alberto Lima',
-        cpf:'333.333.333-33',
-        telefone:'(33) 33333-3333',
-        status:'Inativo'
+        id: 4,
+        nome: 'Carlos Alberto Lima',
+        cpf: '333.333.333-33',
+        telefone: '(33) 33333-3333',
+        status: 'Inativo'
     },
 
     {
-        id:5,
-        nome:'Fernanda Oliveira',
-        cpf:'444.444.444-44',
-        telefone:'(44) 44444-4444',
-        status:'Ativo'
+        id: 5,
+        nome: 'Fernanda Oliveira',
+        cpf: '444.444.444-44',
+        telefone: '(44) 44444-4444',
+        status: 'Ativo'
     }
 
 ];
@@ -51,29 +51,29 @@ const pacientes = [
 ========================= */
 
 const tbody =
-document.getElementById(
-    'tbodyPacientes'
-);
+    document.getElementById(
+        'tbodyPacientes'
+    );
 
 const busca =
-document.getElementById(
-    'buscarPaciente'
-);
+    document.getElementById(
+        'buscarPaciente'
+    );
 
 /* =========================
    RENDERIZAR
 ========================= */
 
-function renderizarPacientes(lista){
+function renderizarPacientes(lista) {
 
     tbody.innerHTML = '';
 
-    lista.forEach((paciente,index)=>{
+    lista.forEach((paciente, index) => {
 
         const classe =
-        paciente.status === 'Ativo'
-        ? 'ativo'
-        : 'inativo';
+            paciente.status === 'Ativo'
+                ? 'ativo'
+                : 'inativo';
 
         tbody.innerHTML += `
 
@@ -147,19 +147,19 @@ function renderizarPacientes(lista){
 
 busca.addEventListener(
     'keyup',
-    function(){
+    function () {
 
         const texto =
-        busca.value.toLowerCase();
+            busca.value.toLowerCase();
 
         const filtrados =
-        pacientes.filter(paciente =>
+            pacientes.filter(paciente =>
 
-            paciente.nome
-            .toLowerCase()
-            .includes(texto)
+                paciente.nome
+                    .toLowerCase()
+                    .includes(texto)
 
-        );
+            );
 
         renderizarPacientes(
             filtrados
@@ -172,18 +172,18 @@ busca.addEventListener(
    EXCLUIR
 ========================= */
 
-function excluir(index){
+function excluir(index) {
 
     const confirmar =
-    confirm(
+        confirm(
 
-        'Deseja excluir este paciente?'
+            'Deseja excluir este paciente?'
 
-    );
+        );
 
-    if(confirmar){
+    if (confirmar) {
 
-        pacientes.splice(index,1);
+        pacientes.splice(index, 1);
 
         renderizarPacientes(
             pacientes

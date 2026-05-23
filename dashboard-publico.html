@@ -2,213 +2,213 @@
 <html lang="pt-br">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sala de Espera</title>
+    <title>Sala de Espera</title>
 
-<link rel="stylesheet" href="css/dashboard-publico.css">
+    <link rel="stylesheet" href="css/dashboard-publico.css">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
 <body>
 
-<div class="painel-container">
+    <div class="painel-container">
 
-    <!-- TOPO -->
+        <!-- TOPO -->
 
-    <header class="topo">
+        <header class="topo">
 
-        <div class="titulo-area">
+            <div class="titulo-area">
 
-            <div class="logo">
-                 <img src="img/logo.png" alt="Logo Clínica Odontológica">
-            </div>
-
-            <div>
-                <h1>POR FAVOR, AGUARDE SER CHAMADO(A)</h1>
-            </div>
-
-        </div>
-
-        <div class="data-hora">
-
-            <span id="dataAtual">20/05/2024</span>
-
-            <strong id="horaAtual">10:45</strong>
-
-        </div>
-
-    </header>
-
-    <!-- CONTEÚDO -->
-
-    <section class="conteudo-topo">
-
-        <!-- SENHA -->
-
-       <div class="senha-atual-card">
-
-    <h2>SENHA ATUAL</h2>
-
-    <!-- SENHA -->
-
-    <div class="senha-atual" id="senhaAtual">
-        A023
-    </div>
-
-    <!-- SALA -->
-
-    <div class="sala-atendimento" id="salaAtual">
-        SALA 2
-    </div>
-
-    <!-- PACIENTE -->
-
-    <div class="paciente-atual" id="pacienteAtual">
-        Maria da Silva
-    </div>
-
-</div>
-
-        <!-- ÚLTIMAS CHAMADAS -->
-
-        <div class="ultimas-chamadas">
-
-            <h3>ÚLTIMAS CHAMADAS</h3>
-
-            <div class="lista-chamadas">
-
-                <div class="linha-chamada">
-                    <span>A022</span>
-                    <span>10:44</span>
+                <div class="logo">
+                    <img src="img/logo.png" alt="Logo Clínica Odontológica">
                 </div>
 
-                <div class="linha-chamada">
-                    <span>A021</span>
-                    <span>10:40</span>
-                </div>
-
-                <div class="linha-chamada">
-                    <span>A020</span>
-                    <span>10:36</span>
-                </div>
-
-                <div class="linha-chamada">
-                    <span>A019</span>
-                    <span>10:32</span>
+                <div>
+                    <h1>POR FAVOR, AGUARDE SER CHAMADO(A)</h1>
                 </div>
 
             </div>
 
-        </div>
+            <div class="data-hora">
 
-    </section>
+                <span id="dataAtual">20/05/2024</span>
 
-    <!-- TABELA -->
+                <strong id="horaAtual">10:45</strong>
 
-    <section class="fila-card">
+            </div>
 
-        <table>
+        </header>
 
-            <thead>
+        <!-- CONTEÚDO -->
 
-                <tr>
-                    <th>SENHA</th>
-                    <th>PRIORIDADE</th>
-                    <th>PACIENTE</th>
-                </tr>
+        <section class="conteudo-topo">
 
-            </thead>
+            <!-- SENHA -->
 
-            <tbody id="filaTabela">
+            <div class="senha-atual-card">
 
-                <tr>
-                    <td>A024</td>
+                <h2>SENHA ATUAL</h2>
 
-                    <td>
+                <!-- SENHA -->
 
-                        <div class="prioridade">
+                <div class="senha-atual" id="senhaAtual">
+                    A023
+                </div>
 
-                            <span class="bolinha vermelho"></span>
+                <!-- SALA -->
 
-                            1° Prioridade
+                <div class="sala-atendimento" id="salaAtual">
+                    SALA 2
+                </div>
 
-                        </div>
+                <!-- PACIENTE -->
 
-                    </td>
+                <div class="paciente-atual" id="pacienteAtual">
+                    Maria da Silva
+                </div>
 
-                    <td>—</td>
+            </div>
 
-                </tr>
+            <!-- ÚLTIMAS CHAMADAS -->
 
-                <tr>
+            <div class="ultimas-chamadas">
 
-                    <td>B015</td>
+                <h3>ÚLTIMAS CHAMADAS</h3>
 
-                    <td>
+                <div class="lista-chamadas">
 
-                        <div class="prioridade">
+                    <div class="linha-chamada">
+                        <span>A022</span>
+                        <span>10:44</span>
+                    </div>
 
-                            <span class="bolinha amarelo"></span>
+                    <div class="linha-chamada">
+                        <span>A021</span>
+                        <span>10:40</span>
+                    </div>
 
-                            2° Prioridade 
+                    <div class="linha-chamada">
+                        <span>A020</span>
+                        <span>10:36</span>
+                    </div>
 
-                        </div>
+                    <div class="linha-chamada">
+                        <span>A019</span>
+                        <span>10:32</span>
+                    </div>
 
-                    </td>
+                </div>
 
-                    <td>—</td>
+            </div>
 
-                </tr>
+        </section>
 
-                <tr>
+        <!-- TABELA -->
 
-                    <td>C008</td>
+        <section class="fila-card">
 
-                    <td>
+            <table>
 
-                        <div class="prioridade">
+                <thead>
 
-                            <span class="bolinha verde"></span>
+                    <tr>
+                        <th>SENHA</th>
+                        <th>PRIORIDADE</th>
+                        <th>PACIENTE</th>
+                    </tr>
 
-                            Pouca Urgência
+                </thead>
 
-                        </div>
+                <tbody id="filaTabela">
 
-                    </td>
+                    <tr>
+                        <td>A024</td>
 
-                    <td>—</td>
+                        <td>
 
-                </tr>
+                            <div class="prioridade">
 
-            </tbody>
+                                <span class="bolinha vermelho"></span>
 
-        </table>
+                                1° Prioridade
 
-    </section>
+                            </div>
 
-    <!-- RODAPÉ -->
+                        </td>
 
-    <footer class="rodape">
+                        <td>—</td>
 
-        <h2>Agradecemos a sua paciência!</h2>
+                    </tr>
 
-         <!-- BOTÃO ENCERRAR -->
+                    <tr>
 
-    <button class="btn-encerrar" onclick="encerrarDashboard()">
-        <i class="fa-solid fa-right-from-bracket"></i>
-        Encerrar
-    </button>
+                        <td>B015</td>
 
-    </footer>
+                        <td>
 
-</div>
+                            <div class="prioridade">
 
-<script src="js/dashboard-publico.js"></script>
+                                <span class="bolinha amarelo"></span>
+
+                                2° Prioridade
+
+                            </div>
+
+                        </td>
+
+                        <td>—</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>C008</td>
+
+                        <td>
+
+                            <div class="prioridade">
+
+                                <span class="bolinha verde"></span>
+
+                                Pouca Urgência
+
+                            </div>
+
+                        </td>
+
+                        <td>—</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- RODAPÉ -->
+
+        <footer class="rodape">
+
+            <h2>Agradecemos a sua paciência!</h2>
+
+            <!-- BOTÃO ENCERRAR -->
+
+            <button class="btn-encerrar" onclick="encerrarDashboard()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Encerrar
+            </button>
+
+        </footer>
+
+    </div>
+
+    <script src="js/dashboard-publico.js"></script>
 
 </body>
+
 </html>

@@ -5,283 +5,268 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Laudos</title>
 
     <!-- ÍCONES -->
 
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- CSS -->
 
-    <link rel="stylesheet"
-    href="css/global.css">
+    <link rel="stylesheet" href="css/global.css">
 
-    <link rel="stylesheet"
-    href="css/laudos.css">
+    <link rel="stylesheet" href="css/laudos.css">
 
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <!-- SIDEBAR -->
+        <!-- SIDEBAR -->
 
-    <aside class="sidebar">
+        <aside class="sidebar">
 
-        <!-- LOGO -->
+            <!-- LOGO -->
 
-        <div class="logo">
+            <div class="logo">
 
-            <img
-            src="img/logo.png"
-            alt="Logo">
+                <img src="img/logo.png" alt="Logo">
 
-        </div>
+            </div>
 
-        <!-- MENU -->
+            <!-- MENU -->
 
-        <nav class="menu">
+            <nav class="menu">
 
-            <a href="dashboard-publico.html">
+                <a href="dashboard-publico.html">
 
-                <i class="fa-solid fa-tv"></i>
+                    <i class="fa-solid fa-tv"></i>
 
-                <span>Dashboard</span>
+                    <span>Dashboard</span>
 
-            </a>
+                </a>
 
-            <a href="menu-principal.html">
+                <a href="menu-principal.html">
 
-                <i class="fa-solid fa-house"></i>
+                    <i class="fa-solid fa-house"></i>
 
-                <span>Menu Principal</span>
+                    <span>Menu Principal</span>
 
-            </a>
+                </a>
 
-            <a href="pacientes.html">
+                <a href="pacientes.html">
 
-                <i class="fa-regular fa-user"></i>
+                    <i class="fa-regular fa-user"></i>
 
-                <span>Pacientes</span>
+                    <span>Pacientes</span>
 
-            </a>
+                </a>
 
-            <a href="atendimentos.html">
+                <a href="atendimentos.html">
 
-                <i class="fa-regular fa-calendar-check"></i>
+                    <i class="fa-regular fa-calendar-check"></i>
 
-                <span>Atendimentos</span>
+                    <span>Atendimentos</span>
 
-            </a>
+                </a>
 
-            <a href="receituario.html">
+                <a href="receituario.html">
 
-                <i class="fa-regular fa-file-lines"></i>
+                    <i class="fa-regular fa-file-lines"></i>
 
-                <span>Receituário</span>
+                    <span>Receituário</span>
 
-            </a>
+                </a>
 
-            <a href="relatorios.html">
+                <a href="relatorios.html">
 
-                <i class="fa-regular fa-chart-bar"></i>
+                    <i class="fa-regular fa-chart-bar"></i>
 
-                <span>Relatórios</span>
+                    <span>Relatórios</span>
 
-            </a>
+                </a>
 
-            <!-- ATIVO -->
+                <!-- ATIVO -->
 
-            <a
-            href="laudos.html"
-            class="active">
+                <a href="laudos.html" class="active">
 
-                <i class="fa-regular fa-file"></i>
+                    <i class="fa-regular fa-file"></i>
 
-                <span>Laudos</span>
+                    <span>Laudos</span>
 
-            </a>
+                </a>
 
-            <a href="login.html">
+                <a href="login.html">
 
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
 
-                <span>Sair</span>
+                    <span>Sair</span>
 
-            </a>
+                </a>
 
-        </nav>
+            </nav>
 
-    </aside>
+        </aside>
 
-    <!-- MAIN -->
+        <!-- MAIN -->
 
-    <main class="main">
+        <main class="main">
 
-        <!-- CARD -->
+            <!-- CARD -->
 
-        <div class="card-laudos">
+            <div class="card-laudos">
 
-            <!-- TÍTULO -->
+                <!-- TÍTULO -->
 
-            <h1>
+                <h1>
 
-                Novo Laudo
+                    Novo Laudo
 
-            </h1>
+                </h1>
 
-            <!-- FORM -->
+                <!-- FORM -->
 
-            <form id="formLaudo">
+                <form id="formLaudo">
 
-                <!-- LINHA -->
+                    <!-- LINHA -->
 
-                <div class="linha">
+                    <div class="linha">
 
-                    <!-- PACIENTE -->
+                        <!-- PACIENTE -->
+
+                        <div class="grupo">
+
+                            <label>
+
+                                Paciente
+
+                            </label>
+
+                            <select id="paciente">
+
+                                <option value="">
+                                    Selecione o paciente
+                                </option>
+
+                                <option>
+                                    Maria da Silva
+                                </option>
+
+                                <option>
+                                    João Pedro Souza
+                                </option>
+
+                                <option>
+                                    Ana Paula Santos
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!-- DATA -->
+
+                        <div class="grupo">
+
+                            <label>
+
+                                Data
+
+                            </label>
+
+                            <div class="input-data">
+
+                                <input type="date" id="data">
+
+                                <i class="fa-regular fa-calendar"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- TIPO -->
 
                     <div class="grupo">
 
                         <label>
 
-                            Paciente
+                            Tipo de Laudo
 
                         </label>
 
-                        <select id="paciente">
+                        <select id="tipoLaudo">
 
                             <option value="">
-                                Selecione o paciente
+                                Selecione o tipo de laudo
                             </option>
 
                             <option>
-                                Maria da Silva
+                                Avaliação Odontológica
                             </option>
 
                             <option>
-                                João Pedro Souza
+                                Laudo Clínico
                             </option>
 
                             <option>
-                                Ana Paula Santos
+                                Encaminhamento
+                            </option>
+
+                            <option>
+                                Procedimento Realizado
                             </option>
 
                         </select>
 
                     </div>
 
-                    <!-- DATA -->
+                    <!-- DESCRIÇÃO -->
 
                     <div class="grupo">
 
                         <label>
 
-                            Data
+                            Descrição / Observações
 
                         </label>
 
-                        <div class="input-data">
-
-                            <input
-                            type="date"
-                            id="data">
-
-                            <i class="fa-regular fa-calendar"></i>
-
-                        </div>
+                        <textarea id="descricao" placeholder="Digite a descrição do laudo..."></textarea>
 
                     </div>
 
-                </div>
+                    <!-- BOTÕES -->
 
-                <!-- TIPO -->
+                    <div class="acoes">
 
-                <div class="grupo">
+                        <button type="reset" class="btn-limpar">
 
-                    <label>
+                            LIMPAR
 
-                        Tipo de Laudo
+                        </button>
 
-                    </label>
+                        <button type="submit" class="btn-salvar">
 
-                    <select id="tipoLaudo">
+                            SALVAR / IMPRIMIR
 
-                        <option value="">
-                            Selecione o tipo de laudo
-                        </option>
+                        </button>
 
-                        <option>
-                            Avaliação Odontológica
-                        </option>
+                    </div>
 
-                        <option>
-                            Laudo Clínico
-                        </option>
+                </form>
 
-                        <option>
-                            Encaminhamento
-                        </option>
+            </div>
 
-                        <option>
-                            Procedimento Realizado
-                        </option>
+        </main>
 
-                    </select>
+    </div>
 
-                </div>
-
-                <!-- DESCRIÇÃO -->
-
-                <div class="grupo">
-
-                    <label>
-
-                        Descrição / Observações
-
-                    </label>
-
-                    <textarea
-                    id="descricao"
-                    placeholder="Digite a descrição do laudo..."></textarea>
-
-                </div>
-
-                <!-- BOTÕES -->
-
-                <div class="acoes">
-
-                    <button
-                    type="reset"
-                    class="btn-limpar">
-
-                        LIMPAR
-
-                    </button>
-
-                    <button
-                    type="submit"
-                    class="btn-salvar">
-
-                        SALVAR / IMPRIMIR
-
-                    </button>
-
-                </div>
-
-            </form>
-
-        </div>
-
-    </main>
-
-</div>
-
-<script src="js/laudos.js"></script>
+    <script src="js/laudos.js"></script>
 
 </body>
+
 </html>
