@@ -3,9 +3,9 @@
 ========================= */
 
 const form =
-document.getElementById(
-    'formReceituario'
-);
+    document.getElementById(
+        'formReceituario'
+    );
 
 /* =========================
    ENVIAR
@@ -13,39 +13,39 @@ document.getElementById(
 
 form.addEventListener(
     'submit',
-    function(event){
+    function (event) {
 
         event.preventDefault();
 
         /* CAMPOS */
 
         const paciente =
-        document.getElementById(
-            'paciente'
-        ).value;
+            document.getElementById(
+                'paciente'
+            ).value;
 
         const data =
-        document.getElementById(
-            'data'
-        ).value;
+            document.getElementById(
+                'data'
+            ).value;
 
         const prescricao =
-        document.getElementById(
-            'prescricao'
-        ).value;
+            document.getElementById(
+                'prescricao'
+            ).value;
 
         const orientacoes =
-        document.getElementById(
-            'orientacoes'
-        ).value;
+            document.getElementById(
+                'orientacoes'
+            ).value;
 
         /* VALIDAÇÃO */
 
-        if(
+        if (
             paciente === '' ||
             data === '' ||
             prescricao === ''
-        ){
+        ) {
 
             alert(
                 'Preencha os campos obrigatórios.'

@@ -1,60 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Login - Sistema Odontológico</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/login.css">
+
+    <!-- Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
+
 <body>
 
     <div class="container">
 
         <div class="login-box">
 
+            <!-- LADO ESQUERDO -->
             <div class="left-side">
 
                 <h2 class="titulo-login">LOGIN</h2>
 
                 <img src="img/logo.png" alt="Logo" class="logo">
 
-               
                 <form id="loginForm">
 
+                    <!-- USUÁRIO -->
                     <div class="input-box">
                         <i class="fa-regular fa-user"></i>
+
                         <input type="text" id="usuario" placeholder="Usuário" required>
                     </div>
 
+                    <!-- SENHA -->
                     <div class="input-box">
                         <i class="fa-solid fa-lock"></i>
+
                         <input type="password" id="senha" placeholder="Senha" required>
                     </div>
 
+                    <!-- LEMBRAR -->
                     <div class="remember">
                         <input type="checkbox" id="lembrar">
-                        <label for="lembrar">Lembrar-me</label>
+
+                        <label for="lembrar">
+                            Lembrar-me
+                        </label>
                     </div>
 
+                    <!-- BOTÃO ENTRAR -->
                     <button type="submit" class="btn-login">
                         ENTRAR
                     </button>
 
-                    <a href="recuperar-senha.html" class="forgot">Esqueceu sua senha?</a>
+                    <!-- BOTÃO CADASTRAR -->
+                    <a href="cadastro-usuario.html" class="btn-cadastrar">
+                        CADASTRAR
+                    </a>
+
+                    <!-- RECUPERAR SENHA -->
+                    <a href="recuperar-senha.html" class="forgot">
+                        Esqueceu sua senha?
+                    </a>
 
                 </form>
 
             </div>
 
+            <!-- LADO DIREITO -->
             <div class="right-side">
+
                 <img src="img/clinica.png" alt="Clínica Odontológica">
+
             </div>
 
         </div>
 
     </div>
 
-<script src="js/login.js"></script>
+    <script src="js/login.js"></script>
+
 </body>
+
 </html>

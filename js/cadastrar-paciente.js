@@ -3,9 +3,9 @@
 ========================= */
 
 const form =
-document.getElementById(
-    'formPaciente'
-);
+    document.getElementById(
+        'formPaciente'
+    );
 
 /* =========================
    ENVIAR
@@ -13,55 +13,55 @@ document.getElementById(
 
 form.addEventListener(
     'submit',
-    function(event){
+    function (event) {
 
         event.preventDefault();
 
         /* CAMPOS */
 
         const nome =
-        document.getElementById(
-            'nome'
-        ).value;
+            document.getElementById(
+                'nome'
+            ).value;
 
         const nascimento =
-        document.getElementById(
-            'nascimento'
-        ).value;
+            document.getElementById(
+                'nascimento'
+            ).value;
 
         const cpf =
-        document.getElementById(
-            'cpf'
-        ).value;
+            document.getElementById(
+                'cpf'
+            ).value;
 
         const telefone =
-        document.getElementById(
-            'telefone'
-        ).value;
+            document.getElementById(
+                'telefone'
+            ).value;
 
         const endereco =
-        document.getElementById(
-            'endereco'
-        ).value;
+            document.getElementById(
+                'endereco'
+            ).value;
 
         const bairro =
-        document.getElementById(
-            'bairro'
-        ).value;
+            document.getElementById(
+                'bairro'
+            ).value;
 
         const sus =
-        document.getElementById(
-            'sus'
-        ).value;
+            document.getElementById(
+                'sus'
+            ).value;
 
         const email =
-        document.getElementById(
-            'email'
-        ).value;
+            document.getElementById(
+                'email'
+            ).value;
 
         /* VALIDAÇÃO */
 
-        if(
+        if (
             nome === '' ||
             nascimento === '' ||
             cpf === '' ||
@@ -70,7 +70,7 @@ form.addEventListener(
             bairro === '' ||
             sus === '' ||
             email === ''
-        ){
+        ) {
 
             alert(
                 'Preencha todos os campos obrigatórios.'
@@ -100,16 +100,16 @@ form.addEventListener(
 ========================= */
 
 const cpfInput =
-document.getElementById(
-    'cpf'
-);
+    document.getElementById(
+        'cpf'
+    );
 
 cpfInput.addEventListener(
     'input',
-    function(){
+    function () {
 
         let valor =
-        cpfInput.value.replace(/\D/g,'');
+            cpfInput.value.replace(/\D/g, '');
 
         valor = valor.replace(
             /(\d{3})(\d)/,
@@ -136,16 +136,16 @@ cpfInput.addEventListener(
 ========================= */
 
 const telefoneInput =
-document.getElementById(
-    'telefone'
-);
+    document.getElementById(
+        'telefone'
+    );
 
 telefoneInput.addEventListener(
     'input',
-    function(){
+    function () {
 
         let valor =
-        telefoneInput.value.replace(/\D/g,'');
+            telefoneInput.value.replace(/\D/g, '');
 
         valor = valor.replace(
             /^(\d{2})(\d)/g,

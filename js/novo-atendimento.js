@@ -4,16 +4,16 @@
 
 let prioridadeSelecionada = '';
 
-function selecionarPrioridade(prioridade){
+function selecionarPrioridade(prioridade) {
 
     prioridadeSelecionada = prioridade;
 
     const cards =
-    document.querySelectorAll(
-        '.card-prioridade'
-    );
+        document.querySelectorAll(
+            '.card-prioridade'
+        );
 
-    cards.forEach(card=>{
+    cards.forEach(card => {
 
         card.classList.remove(
             'selecionado'
@@ -32,9 +32,9 @@ function selecionarPrioridade(prioridade){
 ========================= */
 
 const form =
-document.getElementById(
-    'formAtendimento'
-);
+    document.getElementById(
+        'formAtendimento'
+    );
 
 /* =========================
    ENVIAR
@@ -42,41 +42,41 @@ document.getElementById(
 
 form.addEventListener(
     'submit',
-    function(event){
+    function (event) {
 
         event.preventDefault();
 
         /* CAMPOS */
 
         const paciente =
-        document.getElementById(
-            'paciente'
-        ).value;
+            document.getElementById(
+                'paciente'
+            ).value;
 
         const data =
-        document.getElementById(
-            'data'
-        ).value;
+            document.getElementById(
+                'data'
+            ).value;
 
         const dentista =
-        document.getElementById(
-            'dentista'
-        ).value;
+            document.getElementById(
+                'dentista'
+            ).value;
 
         const queixa =
-        document.getElementById(
-            'queixa'
-        ).value;
+            document.getElementById(
+                'queixa'
+            ).value;
 
         /* VALIDAÇÃO */
 
-        if(
+        if (
             paciente === '' ||
             data === '' ||
             dentista === '' ||
             prioridadeSelecionada === '' ||
             queixa === ''
-        ){
+        ) {
 
             alert(
                 'Preencha todos os campos.'
@@ -99,16 +99,16 @@ form.addEventListener(
         prioridadeSelecionada = '';
 
         document
-        .querySelectorAll(
-            '.card-prioridade'
-        )
-        .forEach(card=>{
+            .querySelectorAll(
+                '.card-prioridade'
+            )
+            .forEach(card => {
 
-            card.classList.remove(
-                'selecionado'
-            );
+                card.classList.remove(
+                    'selecionado'
+                );
 
-        });
+            });
 
     }
 );

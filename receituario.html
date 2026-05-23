@@ -5,256 +5,238 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Receituário</title>
 
     <!-- ÍCONES -->
 
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- CSS -->
 
-    <link rel="stylesheet"
-    href="css/global.css">
+    <link rel="stylesheet" href="css/global.css">
 
-    <link rel="stylesheet"
-    href="css/receituario.css">
+    <link rel="stylesheet" href="css/receituario.css">
 
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <!-- SIDEBAR -->
+        <!-- SIDEBAR -->
 
-    <aside class="sidebar">
+        <aside class="sidebar">
 
-        <!-- LOGO -->
+            <!-- LOGO -->
 
-        <div class="logo">
+            <div class="logo">
 
-            <img
-            src="img/logo.png"
-            alt="Logo">
+                <img src="img/logo.png" alt="Logo">
 
-        </div>
+            </div>
 
-        <!-- MENU -->
+            <!-- MENU -->
 
-        <nav class="menu">
+            <nav class="menu">
 
-            <a href="dashboard-publico.html">
+                <a href="dashboard-publico.html">
 
-                <i class="fa-solid fa-tv"></i>
+                    <i class="fa-solid fa-tv"></i>
 
-                <span>Dashboard</span>
+                    <span>Dashboard</span>
 
-            </a>
+                </a>
 
-            <a href="menu-principal.html">
+                <a href="menu-principal.html">
 
-                <i class="fa-solid fa-house"></i>
+                    <i class="fa-solid fa-house"></i>
 
-                <span>Menu Principal</span>
+                    <span>Menu Principal</span>
 
-            </a>
+                </a>
 
-            <a href="pacientes.html">
+                <a href="pacientes.html">
 
-                <i class="fa-regular fa-user"></i>
+                    <i class="fa-regular fa-user"></i>
 
-                <span>Pacientes</span>
+                    <span>Pacientes</span>
 
-            </a>
+                </a>
 
-            <a href="atendimentos.html">
+                <a href="atendimentos.html">
 
-                <i class="fa-regular fa-calendar-check"></i>
+                    <i class="fa-regular fa-calendar-check"></i>
 
-                <span>Atendimentos</span>
+                    <span>Atendimentos</span>
 
-            </a>
+                </a>
 
-            <!-- ATIVO -->
+                <!-- ATIVO -->
 
-            <a
-            href="receituario.html"
-            class="active">
+                <a href="receituario.html" class="active">
 
-                <i class="fa-regular fa-file-lines"></i>
+                    <i class="fa-regular fa-file-lines"></i>
 
-                <span>Receituário</span>
+                    <span>Receituário</span>
 
-            </a>
+                </a>
 
-            <a href="relatorios.html">
+                <a href="relatorios.html">
 
-                <i class="fa-regular fa-chart-bar"></i>
+                    <i class="fa-regular fa-chart-bar"></i>
 
-                <span>Relatórios</span>
+                    <span>Relatórios</span>
 
-            </a>
+                </a>
 
-            <a href="laudos.html">
+                <a href="laudos.html">
 
-                <i class="fa-regular fa-file"></i>
+                    <i class="fa-regular fa-file"></i>
 
-                <span>Laudos</span>
+                    <span>Laudos</span>
 
-            </a>
+                </a>
 
-            <a href="login.html">
+                <a href="login.html">
 
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
 
-                <span>Sair</span>
+                    <span>Sair</span>
 
-            </a>
+                </a>
 
-        </nav>
+            </nav>
 
-    </aside>
+        </aside>
 
-    <!-- MAIN -->
+        <!-- MAIN -->
 
-    <main class="main">
+        <main class="main">
 
-        <!-- CARD -->
+            <!-- CARD -->
 
-        <div class="card-receituario">
+            <div class="card-receituario">
 
-            <!-- TÍTULO -->
+                <!-- TÍTULO -->
 
-            <h1>
+                <h1>
 
-                Novo Receituário
+                    Novo Receituário
 
-            </h1>
+                </h1>
 
-            <!-- FORM -->
+                <!-- FORM -->
 
-            <form id="formReceituario">
+                <form id="formReceituario">
 
-                <!-- LINHA -->
+                    <!-- LINHA -->
 
-                <div class="linha">
+                    <div class="linha">
 
-                    <!-- PACIENTE -->
+                        <!-- PACIENTE -->
 
-                    <div class="grupo">
+                        <div class="grupo">
 
-                        <label>
-                            Paciente
-                        </label>
+                            <label>
+                                Paciente
+                            </label>
 
-                        <select
-                        id="paciente">
+                            <select id="paciente">
 
-                            <option value="">
-                                Selecione o paciente
-                            </option>
+                                <option value="">
+                                    Selecione o paciente
+                                </option>
 
-                            <option>
-                                Maria da Silva
-                            </option>
+                                <option>
+                                    Maria da Silva
+                                </option>
 
-                            <option>
-                                João Pedro Souza
-                            </option>
+                                <option>
+                                    João Pedro Souza
+                                </option>
 
-                            <option>
-                                Ana Paula Santos
-                            </option>
+                                <option>
+                                    Ana Paula Santos
+                                </option>
 
-                        </select>
+                            </select>
 
-                    </div>
+                        </div>
 
-                    <!-- DATA -->
+                        <!-- DATA -->
 
-                    <div class="grupo">
+                        <div class="grupo">
 
-                        <label>
-                            Data
-                        </label>
+                            <label>
+                                Data
+                            </label>
 
-                        <div class="input-data">
+                            <div class="input-data">
 
-                            <input
-                            type="date"
-                            id="data">
+                                <input type="date" id="data">
 
-                            <i class="fa-regular fa-calendar"></i>
+                                <i class="fa-regular fa-calendar"></i>
+
+                            </div>
 
                         </div>
 
                     </div>
 
-                </div>
+                    <!-- MEDICAMENTO -->
 
-                <!-- MEDICAMENTO -->
+                    <div class="grupo">
 
-                <div class="grupo">
+                        <label>
+                            Medicamento / Prescrição
+                        </label>
 
-                    <label>
-                        Medicamento / Prescrição
-                    </label>
+                        <textarea id="prescricao" placeholder="Digite o medicamento ou prescrição..."></textarea>
 
-                    <textarea
-                    id="prescricao"
-                    placeholder="Digite o medicamento ou prescrição..."></textarea>
+                    </div>
 
-                </div>
+                    <!-- ORIENTAÇÕES -->
 
-                <!-- ORIENTAÇÕES -->
+                    <div class="grupo">
 
-                <div class="grupo">
+                        <label>
+                            Orientações
+                        </label>
 
-                    <label>
-                        Orientações
-                    </label>
+                        <textarea id="orientacoes" placeholder="Digite as orientações..."></textarea>
 
-                    <textarea
-                    id="orientacoes"
-                    placeholder="Digite as orientações..."></textarea>
+                    </div>
 
-                </div>
+                    <!-- BOTÕES -->
 
-                <!-- BOTÕES -->
+                    <div class="acoes">
 
-                <div class="acoes">
+                        <button type="reset" class="btn-limpar">
 
-                    <button
-                    type="reset"
-                    class="btn-limpar">
+                            LIMPAR
 
-                        LIMPAR
+                        </button>
 
-                    </button>
+                        <button type="submit" class="btn-salvar">
 
-                    <button
-                    type="submit"
-                    class="btn-salvar">
+                            SALVAR / IMPRIMIR
 
-                        SALVAR / IMPRIMIR
+                        </button>
 
-                    </button>
+                    </div>
 
-                </div>
+                </form>
 
-            </form>
+            </div>
 
-        </div>
+        </main>
 
-    </main>
+    </div>
 
-</div>
-
-<script src="js/receituario.js"></script>
+    <script src="js/receituario.js"></script>
 
 </body>
+
 </html>

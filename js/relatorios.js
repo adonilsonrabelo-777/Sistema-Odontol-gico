@@ -3,9 +3,9 @@
 ========================= */
 
 const form =
-document.getElementById(
-    'formRelatorio'
-);
+    document.getElementById(
+        'formRelatorio'
+    );
 
 /* =========================
    GERAR RELATÓRIO
@@ -13,21 +13,21 @@ document.getElementById(
 
 form.addEventListener(
     'submit',
-    function(event){
+    function (event) {
 
         event.preventDefault();
 
         const tipo =
-        document.getElementById(
-            'tipoRelatorio'
-        ).value;
+            document.getElementById(
+                'tipoRelatorio'
+            ).value;
 
         const periodo =
-        document.getElementById(
-            'periodo'
-        ).value;
+            document.getElementById(
+                'periodo'
+            ).value;
 
-        if(tipo === ''){
+        if (tipo === '') {
 
             alert(
                 'Selecione um relatório.'
@@ -50,7 +50,7 @@ form.addEventListener(
    BOTÕES LISTA
 ========================= */
 
-function gerarRelatorio(nome){
+function gerarRelatorio(nome) {
 
     alert(
 

@@ -32,12 +32,12 @@ function atualizarHorario() {
     document.getElementById(
         'dataAtual'
     ).innerHTML =
-    `${dia}/${mes}/${ano}`;
+        `${dia}/${mes}/${ano}`;
 
     document.getElementById(
         'horaAtual'
     ).innerHTML =
-    `${hora}:${minuto}`;
+        `${hora}:${minuto}`;
 
 }
 
@@ -53,29 +53,29 @@ atualizarHorario();
 ========================================================= */
 
 const senhaAtual =
-document.getElementById(
-    'senhaAtual'
-);
+    document.getElementById(
+        'senhaAtual'
+    );
 
 const salaAtual =
-document.getElementById(
-    'salaAtual'
-);
+    document.getElementById(
+        'salaAtual'
+    );
 
 const pacienteAtual =
-document.getElementById(
-    'pacienteAtual'
-);
+    document.getElementById(
+        'pacienteAtual'
+    );
 
 const listaChamadas =
-document.querySelector(
-    '.lista-chamadas'
-);
+    document.querySelector(
+        '.lista-chamadas'
+    );
 
 const tabelaFila =
-document.getElementById(
-    'filaTabela'
-);
+    document.getElementById(
+        'filaTabela'
+    );
 
 /* =========================================================
    FILA DE ATENDIMENTO
@@ -142,7 +142,7 @@ async function carregarVozes() {
         const intervalo = setInterval(() => {
 
             const vozes =
-            speechSynthesis.getVoices();
+                speechSynthesis.getVoices();
 
             console.log(
                 'VOZES:',
@@ -210,7 +210,7 @@ function selecionarVoz(vozes) {
         if (encontrada) {
 
             vozSelecionada =
-            encontrada;
+                encontrada;
 
             console.log(
                 'VOZ FEMININA:',
@@ -296,7 +296,7 @@ function falarTexto(texto) {
         setTimeout(() => {
 
             const fala =
-            new SpeechSynthesisUtterance();
+                new SpeechSynthesisUtterance();
 
             fala.text = texto;
 
@@ -309,10 +309,10 @@ function falarTexto(texto) {
             if (vozSelecionada) {
 
                 fala.voice =
-                vozSelecionada;
+                    vozSelecionada;
 
                 fala.voiceURI =
-                vozSelecionada.voiceURI;
+                    vozSelecionada.voiceURI;
 
             }
 
@@ -532,18 +532,18 @@ function renderizarChamadas() {
 async function chamarSenha() {
 
     const atual =
-    fila[indice];
+        fila[indice];
 
     /* MOSTRAR */
 
     senhaAtual.innerHTML =
-    atual.senha;
+        atual.senha;
 
     salaAtual.innerHTML =
-    `SALA ${atual.sala}`;
+        `SALA ${atual.sala}`;
 
     pacienteAtual.innerHTML =
-    atual.paciente;
+        atual.paciente;
 
     /* ANIMAÇÃO */
 
@@ -562,13 +562,13 @@ async function chamarSenha() {
     /* HORÁRIO */
 
     const horario =
-    new Date().toLocaleTimeString(
-        'pt-BR',
-        {
-            hour: '2-digit',
-            minute: '2-digit'
-        }
-    );
+        new Date().toLocaleTimeString(
+            'pt-BR',
+            {
+                hour: '2-digit',
+                minute: '2-digit'
+            }
+        );
 
     /* HISTÓRICO */
 
@@ -650,7 +650,7 @@ function encerrarDashboard() {
         speechSynthesis.cancel();
 
         window.location.href =
-        'menu-principal.html';
+            'menu-principal.html';
 
     }
 
@@ -673,51 +673,51 @@ window.onload = async () => {
     /* BOTÃO */
 
     const botao =
-    document.createElement(
-        'button'
-    );
+        document.createElement(
+            'button'
+        );
 
     botao.innerHTML =
-    'INICIAR PAINEL';
+        'INICIAR PAINEL';
 
     botao.style.position =
-    'fixed';
+        'fixed';
 
     botao.style.top =
-    '20px';
+        '20px';
 
     botao.style.right =
-    '20px';
+        '20px';
 
     botao.style.zIndex =
-    '9999';
+        '9999';
 
     botao.style.padding =
-    '16px 28px';
+        '16px 28px';
 
     botao.style.border =
-    'none';
+        'none';
 
     botao.style.borderRadius =
-    '12px';
+        '12px';
 
     botao.style.background =
-    '#0055c5';
+        '#0055c5';
 
     botao.style.color =
-    '#fff';
+        '#fff';
 
     botao.style.fontSize =
-    '18px';
+        '18px';
 
     botao.style.fontWeight =
-    'bold';
+        'bold';
 
     botao.style.cursor =
-    'pointer';
+        'pointer';
 
     botao.style.boxShadow =
-    '0 4px 12px rgba(0,0,0,0.2)';
+        '0 4px 12px rgba(0,0,0,0.2)';
 
     document.body.appendChild(
         botao
@@ -736,15 +736,15 @@ window.onload = async () => {
             /* AQUECER VOZ */
 
             const aquecer =
-            new SpeechSynthesisUtterance('');
+                new SpeechSynthesisUtterance('');
 
             aquecer.lang =
-            'pt-BR';
+                'pt-BR';
 
             if (vozSelecionada) {
 
                 aquecer.voice =
-                vozSelecionada;
+                    vozSelecionada;
 
             }
 

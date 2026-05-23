@@ -5,47 +5,47 @@ document.addEventListener("DOMContentLoaded", () => {
     ========================= */
 
     const params =
-    new URLSearchParams(
-        window.location.search
-    );
+        new URLSearchParams(
+            window.location.search
+        );
 
     const idAtendimento =
-    Number(
-        params.get("id")
-    );
+        Number(
+            params.get("id")
+        );
 
     /* =========================
        PEGAR LISTA
     ========================= */
 
     const atendimentos =
-    JSON.parse(
-        localStorage.getItem(
-            "listaAtendimentos"
-        )
-    ) || [];
+        JSON.parse(
+            localStorage.getItem(
+                "listaAtendimentos"
+            )
+        ) || [];
 
     /* =========================
        PROCURAR ATENDIMENTO
     ========================= */
 
     const atendimento =
-    atendimentos.find(item =>
-        item.id === idAtendimento
-    );
+        atendimentos.find(item =>
+            item.id === idAtendimento
+        );
 
     /* =========================
        NÃO ENCONTRADO
     ========================= */
 
-    if(!atendimento){
+    if (!atendimento) {
 
         alert(
             "Atendimento não encontrado."
         );
 
         window.location.href =
-        "atendimentos.html";
+            "atendimentos.html";
 
         return;
 
@@ -58,44 +58,44 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById(
         "nomePaciente"
     ).textContent =
-    atendimento.paciente;
+        atendimento.paciente;
 
     document.getElementById(
         "cpfPaciente"
     ).textContent =
-    atendimento.cpf;
+        atendimento.cpf;
 
     document.getElementById(
         "telefonePaciente"
     ).textContent =
-    atendimento.telefone;
+        atendimento.telefone;
 
     document.getElementById(
         "idadePaciente"
     ).textContent =
-    atendimento.idade;
+        atendimento.idade;
 
     document.getElementById(
         "dataAtendimento"
     ).textContent =
-    atendimento.data;
+        atendimento.data;
 
     document.getElementById(
         "dentista"
     ).textContent =
-    atendimento.dentista;
+        atendimento.dentista;
 
     /* =========================
        PRIORIDADE
     ========================= */
 
     const prioridade =
-    document.getElementById(
-        "prioridade"
-    );
+        document.getElementById(
+            "prioridade"
+        );
 
     prioridade.textContent =
-    atendimento.prioridade;
+        atendimento.prioridade;
 
     prioridade.classList.add(
         atendimento.cor
@@ -108,17 +108,17 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById(
         "queixaPrincipal"
     ).textContent =
-    atendimento.queixa;
+        atendimento.queixa;
 
     document.getElementById(
         "procedimentos"
     ).textContent =
-    atendimento.procedimentos;
+        atendimento.procedimentos;
 
     document.getElementById(
         "observacoes"
     ).textContent =
-    atendimento.observacoes;
+        atendimento.observacoes;
 
     /* =========================
        EDITAR
@@ -148,16 +148,16 @@ document.addEventListener("DOMContentLoaded", () => {
         () => {
 
             const confirmar =
-            confirm(
-                "Deseja excluir este atendimento?"
-            );
+                confirm(
+                    "Deseja excluir este atendimento?"
+                );
 
-            if(confirmar){
+            if (confirmar) {
 
                 const novaLista =
-                atendimentos.filter(item =>
-                    item.id !== idAtendimento
-                );
+                    atendimentos.filter(item =>
+                        item.id !== idAtendimento
+                    );
 
                 localStorage.setItem(
                     "listaAtendimentos",
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
 
                 window.location.href =
-                "atendimentos.html";
+                    "atendimentos.html";
 
             }
 

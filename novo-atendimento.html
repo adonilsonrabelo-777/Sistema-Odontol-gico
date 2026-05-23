@@ -5,345 +5,324 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Novo Atendimento</title>
 
     <!-- ÍCONES -->
 
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- CSS -->
 
-    <link rel="stylesheet"
-    href="css/global.css">
+    <link rel="stylesheet" href="css/global.css">
 
-    <link rel="stylesheet"
-    href="css/novo-atendimento.css">
+    <link rel="stylesheet" href="css/novo-atendimento.css">
 
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <!-- SIDEBAR -->
+        <!-- SIDEBAR -->
 
-    <aside class="sidebar">
+        <aside class="sidebar">
 
-        <!-- LOGO -->
+            <!-- LOGO -->
 
-        <div class="logo">
+            <div class="logo">
 
-            <img
-            src="img/logo.png"
-            alt="Logo">
+                <img src="img/logo.png" alt="Logo">
 
-    
 
-        </div>
 
-        <!-- MENU -->
+            </div>
 
-        <nav class="menu">
+            <!-- MENU -->
 
-            <a href="dashboard-publico.html">
+            <nav class="menu">
 
-                <i class="fa-solid fa-tv"></i>
+                <a href="dashboard-publico.html">
 
-                <span>Dashboard</span>
+                    <i class="fa-solid fa-tv"></i>
 
-            </a>
+                    <span>Dashboard</span>
 
-            <a href="menu-principal.html">
+                </a>
 
-                <i class="fa-solid fa-house"></i>
+                <a href="menu-principal.html">
 
-                <span>Menu Principal</span>
+                    <i class="fa-solid fa-house"></i>
 
-            </a>
+                    <span>Menu Principal</span>
 
-            <a href="pacientes.html">
+                </a>
 
-                <i class="fa-regular fa-user"></i>
+                <a href="pacientes.html">
 
-                <span>Pacientes</span>
+                    <i class="fa-regular fa-user"></i>
 
-            </a>
+                    <span>Pacientes</span>
 
-            <a
-            href="atendimentos.html"
-            class="active">
+                </a>
 
-                <i class="fa-regular fa-calendar-check"></i>
+                <a href="atendimentos.html" class="active">
 
-                <span>Atendimentos</span>
+                    <i class="fa-regular fa-calendar-check"></i>
 
-            </a>
+                    <span>Atendimentos</span>
 
-            <a href="receituario.html">
+                </a>
 
-                <i class="fa-regular fa-file-lines"></i>
+                <a href="receituario.html">
 
-                <span>Receituário</span>
+                    <i class="fa-regular fa-file-lines"></i>
 
-            </a>
+                    <span>Receituário</span>
 
-            <a href="relatorios.html">
+                </a>
 
-                <i class="fa-regular fa-chart-bar"></i>
+                <a href="relatorios.html">
 
-                <span>Relatórios</span>
+                    <i class="fa-regular fa-chart-bar"></i>
 
-            </a>
+                    <span>Relatórios</span>
 
-            <a href="laudos.html">
+                </a>
 
-                <i class="fa-regular fa-file"></i>
+                <a href="laudos.html">
 
-                <span>Laudos</span>
+                    <i class="fa-regular fa-file"></i>
 
-            </a>
+                    <span>Laudos</span>
 
-            <a href="login.html">
+                </a>
 
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <a href="login.html">
 
-                <span>Sair</span>
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
 
-            </a>
+                    <span>Sair</span>
 
-        </nav>
+                </a>
 
-    </aside>
+            </nav>
 
-    <!-- MAIN -->
+        </aside>
 
-    <main class="main">
+        <!-- MAIN -->
 
-        <!-- CARD -->
+        <main class="main">
 
-        <div class="card-atendimento">
+            <!-- CARD -->
 
-            <!-- TÍTULO -->
+            <div class="card-atendimento">
 
-            <h1>
+                <!-- TÍTULO -->
 
-                Novo Atendimento
+                <h1>
 
-            </h1>
+                    Novo Atendimento
 
-            <!-- FORM -->
+                </h1>
 
-            <form id="formAtendimento">
+                <!-- FORM -->
 
-                <!-- LINHA -->
+                <form id="formAtendimento">
 
-                <div class="linha">
+                    <!-- LINHA -->
 
-                    <!-- PACIENTE -->
+                    <div class="linha">
+
+                        <!-- PACIENTE -->
+
+                        <div class="grupo">
+
+                            <label>
+
+                                Paciente
+
+                            </label>
+
+                            <select id="paciente">
+
+                                <option value="">
+                                    Selecione o paciente
+                                </option>
+
+                                <option>
+                                    Maria da Silva
+                                </option>
+
+                                <option>
+                                    João Pedro Souza
+                                </option>
+
+                                <option>
+                                    Ana Paula Santos
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!-- DATA -->
+
+                        <div class="grupo">
+
+                            <label>
+
+                                Data
+
+                            </label>
+
+                            <div class="input-data">
+
+                                <input type="date" id="data">
+
+                                <i class="fa-regular fa-calendar"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- DENTISTA -->
 
                     <div class="grupo">
 
                         <label>
 
-                            Paciente
+                            Dentista
 
                         </label>
 
-                        <select id="paciente">
+                        <select id="dentista">
 
                             <option value="">
-                                Selecione o paciente
+                                Selecione o dentista
                             </option>
 
                             <option>
-                                Maria da Silva
+                                Dr. Lucas
                             </option>
 
                             <option>
-                                João Pedro Souza
-                            </option>
-
-                            <option>
-                                Ana Paula Santos
+                                Dra. Ana
                             </option>
 
                         </select>
 
                     </div>
 
-                    <!-- DATA -->
+                    <!-- PRIORIDADE -->
+
+                    <div class="grupo">
+
+                        <label class="titulo-prioridade">
+
+                            Classificação de Prioridade
+
+                        </label>
+
+                        <div class="prioridades">
+
+                            <!-- PRIORIDADE 1 -->
+
+                            <div class="card-prioridade vermelho" onclick="selecionarPrioridade('1° Prioridade')">
+
+                                <i class="fa-solid fa-tooth"></i>
+
+                                <h3>
+                                    1° PRIORIDADE
+                                </h3>
+
+                                <p>
+                                    Sentindo dores
+                                </p>
+
+                            </div>
+
+                            <!-- PRIORIDADE 2 -->
+
+                            <div class="card-prioridade amarelo" onclick="selecionarPrioridade('2° Prioridade')">
+
+                                <i class="fa-solid fa-tooth"></i>
+
+                                <h3>
+                                    2° PRIORIDADE
+                                </h3>
+
+                                <p>
+                                    Extração dentária
+                                </p>
+
+                            </div>
+
+                            <!-- PRIORIDADE 3 -->
+
+                            <div class="card-prioridade verde" onclick="selecionarPrioridade('Pouca Urgência')">
+
+                                <i class="fa-solid fa-tooth"></i>
+
+                                <h3>
+                                    POUCA URGÊNCIA
+                                </h3>
+
+                                <p>
+                                    Demais casos
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- QUEIXA -->
 
                     <div class="grupo">
 
                         <label>
 
-                            Data
+                            Queixa principal
 
                         </label>
 
-                        <div class="input-data">
-
-                            <input
-                            type="date"
-                            id="data">
-
-                            <i class="fa-regular fa-calendar"></i>
-
-                        </div>
+                        <textarea id="queixa" placeholder="Descreva a queixa do paciente"></textarea>
 
                     </div>
 
-                </div>
+                    <!-- BOTÕES -->
 
-                <!-- DENTISTA -->
+                    <div class="acoes">
 
-                <div class="grupo">
+                        <button type="reset" class="btn-cancelar">
 
-                    <label>
+                            CANCELAR
 
-                        Dentista
+                        </button>
 
-                    </label>
+                        <button type="submit" class="btn-salvar">
 
-                    <select id="dentista">
+                            SALVAR
 
-                        <option value="">
-                            Selecione o dentista
-                        </option>
-
-                        <option>
-                            Dr. Lucas
-                        </option>
-
-                        <option>
-                            Dra. Ana
-                        </option>
-
-                    </select>
-
-                </div>
-
-                <!-- PRIORIDADE -->
-
-                <div class="grupo">
-
-                    <label class="titulo-prioridade">
-
-                        Classificação de Prioridade
-
-                    </label>
-
-                    <div class="prioridades">
-
-                        <!-- PRIORIDADE 1 -->
-
-                        <div
-                        class="card-prioridade vermelho"
-                        onclick="selecionarPrioridade('1° Prioridade')">
-
-                            <i class="fa-solid fa-tooth"></i>
-
-                            <h3>
-                                1° PRIORIDADE
-                            </h3>
-
-                            <p>
-                                Sentindo dores
-                            </p>
-
-                        </div>
-
-                        <!-- PRIORIDADE 2 -->
-
-                        <div
-                        class="card-prioridade amarelo"
-                        onclick="selecionarPrioridade('2° Prioridade')">
-
-                            <i class="fa-solid fa-tooth"></i>
-
-                            <h3>
-                                2° PRIORIDADE
-                            </h3>
-
-                            <p>
-                                Extração dentária
-                            </p>
-
-                        </div>
-
-                        <!-- PRIORIDADE 3 -->
-
-                        <div
-                        class="card-prioridade verde"
-                        onclick="selecionarPrioridade('Pouca Urgência')">
-
-                            <i class="fa-solid fa-tooth"></i>
-
-                            <h3>
-                                POUCA URGÊNCIA
-                            </h3>
-
-                            <p>
-                                Demais casos
-                            </p>
-
-                        </div>
+                        </button>
 
                     </div>
 
-                </div>
+                </form>
 
-                <!-- QUEIXA -->
+            </div>
 
-                <div class="grupo">
+        </main>
 
-                    <label>
+    </div>
 
-                        Queixa principal
-
-                    </label>
-
-                    <textarea
-                    id="queixa"
-                    placeholder="Descreva a queixa do paciente"></textarea>
-
-                </div>
-
-                <!-- BOTÕES -->
-
-                <div class="acoes">
-
-                    <button
-                    type="reset"
-                    class="btn-cancelar">
-
-                        CANCELAR
-
-                    </button>
-
-                    <button
-                    type="submit"
-                    class="btn-salvar">
-
-                        SALVAR
-
-                    </button>
-
-                </div>
-
-            </form>
-
-        </div>
-
-    </main>
-
-</div>
-
-<script src="js/novo-atendimento.js"></script>
+    <script src="js/novo-atendimento.js"></script>
 
 </body>
+
 </html>
