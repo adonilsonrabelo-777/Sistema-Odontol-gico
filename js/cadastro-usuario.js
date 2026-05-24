@@ -3,13 +3,12 @@ const form = document.getElementById("cadastroForm");
 form.addEventListener("submit", async function(event) {
     event.preventDefault();
 
-    // Captura os dados exatamente pelos IDs que estão no seu HTML
+    // Captura os dados exatamente pelos IDs que estão no HTML
     const dados = {
         nome: document.getElementById("nome").value.trim(),
         email: document.getElementById("email").value.trim(),
         tipoUsuario: document.getElementById("tipoUsuario").value,
         registro: document.getElementById("registro").value.trim(),
-        novoUsuario: document.getElementById("novoUsuario").value.trim(),
         novaSenha: document.getElementById("novaSenha").value.trim()
     };
 
