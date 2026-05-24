@@ -1,43 +1,35 @@
-/* =========================
-   CADASTRO DE USUÁRIO
-========================= */
+const form = document.getElementById("cadastroForm");
 
-const cadastroForm =
-    document.getElementById("cadastroForm");
+form.addEventListener("submit", async function(event) {
+    event.preventDefault();
 
-const tipoUsuario =
-    document.getElementById("tipoUsuario");
+    // Captura os dados exatamente pelos IDs que estão no seu HTML
+    const dados = {
+        nome: document.getElementById("nome").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        tipoUsuario: document.getElementById("tipoUsuario").value,
+        registro: document.getElementById("registro").value.trim(),
+        novoUsuario: document.getElementById("novoUsuario").value.trim(),
+        novaSenha: document.getElementById("novaSenha").value.trim()
+    };
 
-const registro =
-    document.getElementById("registro");
+    try {
+        const response = await fetch('http://localhost:3000/api/cadastrar', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(dados)
+        });
 
-/* ALTERA PLACEHOLDER */
+        const data = await response.json();
 
-tipoUsuario.addEventListener("change", function () {
-
-    if (tipoUsuario.value === "dentista") {
-
-        registro.placeholder =
-            "Informe o número do CRO";
-
-    } else if (tipoUsuario.value === "atendente") {
-
-        registro.placeholder =
-            "Informe o nº do crachá";
-
+        if (data.sucesso) {
+            alert(data.mensagem);
+            window.location.href = "login.html";
+        } else {
+            alert("Erro: " + data.mensagem);
+        }
+    } catch (error) {
+        console.error("Erro na conexão:", error);
+        alert("Erro ao conectar com o servidor. Verifique o backend!");
     }
-
-});
-
-/* SALVAR CADASTRO */
-
-cadastroForm.addEventListener("submit", function (e) {
-
-    e.preventDefault();
-
-    alert("Cadastro realizado com sucesso!");
-
-    window.location.href =
-        "login.html";
-
 });

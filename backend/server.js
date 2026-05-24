@@ -43,3 +43,18 @@ const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`🚀 Servidor rodando na porta http://localhost:${PORT}`);
 });
+// Adicione isto no seu server.js
+app.post('/api/cadastrar', (req, res) => {
+    const { nome, email, tipoUsuario, registro, novoUsuario, novaSenha } = req.body;
+
+    // Ajustei a query para incluir todos os campos do seu formulário
+    const query = "INSERT INTO usuarios (nome, email, tipo_usuario, registro, usuario, senha) VALUES (?, ?, ?, ?, ?, ?)";
+    
+    db.query(query, [nome, email, tipoUsuario, registro, novoUsuario, novaSenha], (err, result) => {
+        if (err) {
+            console.error("Erro no SQL:", err);
+            return res.status(500).json({ sucesso: false, mensagem: "Erro ao cadastrar no banco" });
+        }
+        res.json({ sucesso: true, mensagem: "Usuário cadastrado com sucesso!" });
+    });
+});
