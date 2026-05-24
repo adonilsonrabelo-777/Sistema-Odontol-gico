@@ -1,202 +1,66 @@
-/* =========================
-   DADOS
-========================= */
+// URL do seu servidor (ajuste se mudar a porta)
+const API_URL = 'http://localhost:3000/api';
 
-const pacientes = [
+// Função para listar pacientes ao carregar a página
+async function carregarPacientes() {
+    try {
+        const response = await fetch(`${API_URL}/pacientes`);
+        const pacientes = await response.json();
+        
+        const tabela = document.getElementById('tbodyPacientes'); // ID correto do seu HTML
+        tabela.innerHTML = ''; // Limpa antes de preencher
 
-    {
-        id: 1,
-        nome: 'Maria da Silva',
-        cpf: '000.000.000-00',
-        telefone: '(00) 00000-0000',
-        status: 'Ativo'
-    },
+        pacientes.forEach(p => {
+            tabela.innerHTML += `
+                <tr>
+                    <td>${p.nome}</td>
+                    <td>${p.cpf}</td>
+                    <td>${p.telefone}</td>
+                    <td><span class="status ativo">Ativo</span></td>
+                    <td>
+                        <div class="acoes">
+                            <a href="detalhes-paciente.html?id=${p.id}" class="btn-acao visualizar" title="Visualizar">
+                                <i class="fas fa-eye"></i>
+                            </a>
 
-    {
-        id: 2,
-        nome: 'João Pedro Souza',
-        cpf: '111.111.111-11',
-        telefone: '(11) 11111-1111',
-        status: 'Ativo'
-    },
+                            <a href="cadastrar-paciente.html?id=${p.id}" class="btn-acao editar" title="Editar">
+                                <i class="fas fa-edit"></i>
+                            </a>
 
-    {
-        id: 3,
-        nome: 'Ana Paula Santos',
-        cpf: '222.222.222-22',
-        telefone: '(22) 22222-2222',
-        status: 'Ativo'
-    },
-
-    {
-        id: 4,
-        nome: 'Carlos Alberto Lima',
-        cpf: '333.333.333-33',
-        telefone: '(33) 33333-3333',
-        status: 'Inativo'
-    },
-
-    {
-        id: 5,
-        nome: 'Fernanda Oliveira',
-        cpf: '444.444.444-44',
-        telefone: '(44) 44444-4444',
-        status: 'Ativo'
+                            <button onclick="excluirPaciente(${p.id})" class="btn-acao excluir" title="Excluir">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `;
+        });
+    } catch (erro) {
+        console.error("Erro ao carregar pacientes:", erro);
+        alert("Não foi possível conectar ao servidor.");
     }
-
-];
-
-/* =========================
-   ELEMENTOS
-========================= */
-
-const tbody =
-    document.getElementById(
-        'tbodyPacientes'
-    );
-
-const busca =
-    document.getElementById(
-        'buscarPaciente'
-    );
-
-/* =========================
-   RENDERIZAR
-========================= */
-
-function renderizarPacientes(lista) {
-
-    tbody.innerHTML = '';
-
-    lista.forEach((paciente, index) => {
-
-        const classe =
-            paciente.status === 'Ativo'
-                ? 'ativo'
-                : 'inativo';
-
-        tbody.innerHTML += `
-
-            <tr>
-
-                <td>${paciente.nome}</td>
-
-                <td>${paciente.cpf}</td>
-
-                <td>${paciente.telefone}</td>
-
-                <td>
-
-                    <span class="status ${classe}">
-
-                        ${paciente.status}
-
-                    </span>
-
-                </td>
-
-                <td>
-
-                    <div class="acoes">
-
-                        <!-- VISUALIZAR -->
-
-                        <a
-                        href="detalhes-paciente.html?id=${paciente.id}"
-                        class="btn-acao visualizar">
-
-                            <i class="fa-regular fa-eye"></i>
-
-                        </a>
-
-                        <!-- EDITAR -->
-
-                        <a
-                        href="detalhes-paciente.html?id=${paciente.id}"
-                        class="btn-acao editar">
-
-                            <i class="fa-regular fa-pen-to-square"></i>
-
-                        </a>
-
-                        <!-- EXCLUIR -->
-
-                        <button
-                        class="btn-acao excluir"
-                        onclick="excluir(${index})">
-
-                            <i class="fa-regular fa-trash-can"></i>
-
-                        </button>
-
-                    </div>
-
-                </td>
-
-            </tr>
-
-        `;
-
-    });
-
 }
 
-/* =========================
-   BUSCAR
-========================= */
-
-busca.addEventListener(
-    'keyup',
-    function () {
-
-        const texto =
-            busca.value.toLowerCase();
-
-        const filtrados =
-            pacientes.filter(paciente =>
-
-                paciente.nome
-                    .toLowerCase()
-                    .includes(texto)
-
-            );
-
-        renderizarPacientes(
-            filtrados
-        );
-
+// Função para excluir paciente
+async function excluirPaciente(id) {
+    if (confirm("Tem certeza que deseja excluir este paciente?")) {
+        try {
+            const response = await fetch(`${API_URL}/pacientes/${id}`, {
+                method: 'DELETE'
+            });
+            
+            const result = await response.json();
+            
+            if (result.sucesso) {
+                alert("Paciente excluído!");
+                carregarPacientes(); // Recarrega a tabela após excluir
+            }
+        } catch (erro) {
+            console.error("Erro ao excluir:", erro);
+            alert("Erro ao excluir o paciente.");
+        }
     }
-);
-
-/* =========================
-   EXCLUIR
-========================= */
-
-function excluir(index) {
-
-    const confirmar =
-        confirm(
-
-            'Deseja excluir este paciente?'
-
-        );
-
-    if (confirmar) {
-
-        pacientes.splice(index, 1);
-
-        renderizarPacientes(
-            pacientes
-        );
-
-    }
-
 }
 
-/* =========================
-   INICIAR
-========================= */
-
-renderizarPacientes(
-    pacientes
-);
+// Inicializa a listagem ao abrir a página
+document.addEventListener('DOMContentLoaded', carregarPacientes);

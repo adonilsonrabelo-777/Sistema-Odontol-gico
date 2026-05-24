@@ -1,254 +1,75 @@
-/* =========================
-   DADOS
-========================= */
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Captura o ID do paciente enviado na URL (ex: detalhes-paciente.html?id=3)
+    const urlParams = new URLSearchParams(window.location.search);
+    const pacienteId = urlParams.get('id');
 
-const pacientes = [
-
-    {
-        id: 1,
-        nome: 'Maria da Silva',
-        cpf: '000.000.000-00',
-        telefone: '(00) 00000-0000',
-        status: 'Ativo',
-        nascimento: '10/02/1992',
-        endereco: 'Rua das Flores, 120',
-        bairro: 'Centro',
-        cidade: 'Paranã - TO',
-
-        ultimoAtendimento: '15/05/2026',
-        dentista: 'Dr. Lucas Andrade',
-        procedimento: 'Limpeza e profilaxia',
-        retorno: '15/06/2026',
-        observacoes: 'Paciente apresentou leve sensibilidade dentária.'
-
-    },
-
-    {
-        id: 2,
-        nome: 'João Pedro Souza',
-        cpf: '111.111.111-11',
-        telefone: '(11) 11111-1111',
-        status: 'Ativo',
-        nascimento: '22/08/1989',
-        endereco: 'Av. Principal, 450',
-        bairro: 'Zona Rural',
-        cidade: 'Paranã - TO',
-
-        ultimoAtendimento: '11/05/2026',
-        dentista: 'Dra. Ana Clara',
-        procedimento: 'Extração dentária',
-        retorno: '20/05/2026',
-        observacoes: 'Paciente em recuperação pós-operatória.'
-
-    },
-
-    {
-        id: 3,
-        nome: 'Ana Paula Santos',
-        cpf: '222.222.222-22',
-        telefone: '(22) 22222-2222',
-        status: 'Ativo',
-        nascimento: '15/05/1995',
-        endereco: 'Rua Esperança, 78',
-        bairro: 'Centro',
-        cidade: 'Paranã - TO',
-
-        ultimoAtendimento: '02/05/2026',
-        dentista: 'Dr. Lucas Andrade',
-        procedimento: 'Canal',
-        retorno: '30/05/2026',
-        observacoes: 'Necessita acompanhamento periódico.'
-
-    },
-
-    {
-        id: 4,
-        nome: 'Carlos Alberto Lima',
-        cpf: '333.333.333-33',
-        telefone: '(33) 33333-3333',
-        status: 'Inativo',
-        nascimento: '03/12/1980',
-        endereco: 'Rua Horizonte, 300',
-        bairro: 'Zona Rural',
-        cidade: 'Paranã - TO',
-
-        ultimoAtendimento: '18/03/2026',
-        dentista: 'Dra. Ana Clara',
-        procedimento: 'Avaliação odontológica',
-        retorno: 'Sem retorno agendado',
-        observacoes: 'Paciente ausente nas últimas consultas.'
-
-    },
-
-    {
-        id: 5,
-        nome: 'Fernanda Oliveira',
-        cpf: '444.444.444-44',
-        telefone: '(44) 44444-4444',
-        status: 'Ativo',
-        nascimento: '09/09/1998',
-        endereco: 'Rua Bela Vista, 56',
-        bairro: 'Centro',
-        cidade: 'Paranã - TO',
-
-        ultimoAtendimento: '10/05/2026',
-        dentista: 'Dr. Lucas Andrade',
-        procedimento: 'Clareamento dental',
-        retorno: '10/06/2026',
-        observacoes: 'Paciente satisfeita com resultado inicial.'
-
+    if (!pacienteId) {
+        alert("Paciente não identificado!");
+        window.location.href = "pacientes.html";
+        return;
     }
 
-];
-
-/* =========================
-   PEGAR ID DA URL
-========================= */
-
-const params =
-    new URLSearchParams(
-        window.location.search
-    );
-
-const id =
-    Number(
-        params.get('id')
-    );
-
-/* =========================
-   BUSCAR PACIENTE
-========================= */
-
-const paciente =
-    pacientes.find(
-        item => item.id === id
-    );
-
-/* =========================
-   CARREGAR DADOS
-========================= */
-
-if (paciente) {
-
-    document.getElementById(
-        'nomePaciente'
-    ).innerText =
-        paciente.nome;
-
-    document.getElementById(
-        'cpfPaciente'
-    ).innerText =
-        paciente.cpf;
-
-    document.getElementById(
-        'telefonePaciente'
-    ).innerText =
-        paciente.telefone;
-
-    document.getElementById(
-        'nascimentoPaciente'
-    ).innerText =
-        paciente.nascimento;
-
-    document.getElementById(
-        'enderecoPaciente'
-    ).innerText =
-        paciente.endereco;
-
-    document.getElementById(
-        'bairroPaciente'
-    ).innerText =
-        paciente.bairro;
-
-    document.getElementById(
-        'cidadePaciente'
-    ).innerText =
-        paciente.cidade;
-
-    document.getElementById(
-        'ultimoAtendimento'
-    ).innerText =
-        paciente.ultimoAtendimento;
-
-    document.getElementById(
-        'dentistaPaciente'
-    ).innerText =
-        paciente.dentista;
-
-    document.getElementById(
-        'procedimentoPaciente'
-    ).innerText =
-        paciente.procedimento;
-
-    document.getElementById(
-        'retornoPaciente'
-    ).innerText =
-        paciente.retorno;
-
-    document.getElementById(
-        'obsPaciente'
-    ).innerText =
-        paciente.observacoes;
-
-    const status =
-        document.getElementById(
-            'statusPaciente'
-        );
-
-    status.innerText =
-        paciente.status;
-
-    if (paciente.status === 'Inativo') {
-
-        status.classList.remove(
-            'ativo'
-        );
-
-        status.classList.add(
-            'inativo'
-        );
-
+    // 2. CORREÇÃO AQUI: Captura o botão pela CLASSE original do HTML (.btn-editar)
+    const btnEditar = document.querySelector(".btn-editar");
+    if (btnEditar) {
+        btnEditar.addEventListener("click", () => {
+            // Redireciona mantendo o ID para a página de alteração
+            window.location.href = `cadastrar-paciente.html?id=${pacienteId}`;
+        });
     }
 
-} else {
-
-    alert(
-        'Paciente não encontrado!'
-    );
-
-    window.location.href =
-        'pacientes.html';
-
-}
-
-/* =========================
-   BOTÃO IMPRIMIR
-========================= */
-
-document.querySelector(
-    '.btn-imprimir'
-).addEventListener(
-    'click',
-    function () {
-
-        window.print();
-
+    const btnImprimir = document.querySelector(".btn-imprimir");
+    if (btnImprimir) {
+        btnImprimir.addEventListener("click", () => {
+            window.print(); // Abre a janela de impressão nativa do sistema/navegador
+        });
     }
-);
 
-/* =========================
-   BOTÃO EDITAR
-========================= */
+    // URL base da tua API integrada com o banco de dados
+    const API_URL = 'http://localhost:3000/api';
 
-document.querySelector(
-    '.btn-editar'
-).addEventListener(
-    'click',
-    function () {
+    // 3. Faz a busca do paciente específico por ID para preencher os cards
+    fetch(`${API_URL}/pacientes/${pacienteId}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Erro ao buscar dados do paciente.");
+            }
+            return response.json();
+        })
+        .then(paciente => {
+            // Preenche as informações principais
+            document.getElementById("nomePaciente").textContent = paciente.nome || "Não informado";
+            
+            const statusElement = document.getElementById("statusPaciente");
+            if (statusElement) {
+                statusElement.textContent = paciente.status || "Ativo";
+            }
 
-        alert(
-            'Abrir edição do paciente.'
-        );
+            // Preenche o CARD: Dados Pessoais
+            document.getElementById("cpfPaciente").textContent = paciente.cpf || "Não informado";
+            document.getElementById("telefonePaciente").textContent = paciente.telefone || "Não informado";
+            
+            if (paciente.data_nascimento) {
+                const data = new Date(paciente.data_nascimento);
+                document.getElementById("nascimentoPaciente").textContent = data.toLocaleDateString('pt-BR', { timeZone: 'UTC' });
+            } else {
+                document.getElementById("nascimentoPaciente").textContent = "Não informada";
+            }
 
-    }
-);
+            // Preenche o CARD: Endereço
+            document.getElementById("enderecoPaciente").textContent = paciente.endereco || "Não informado";
+            document.getElementById("bairroPaciente").textContent = paciente.bairro || "Não informado";
+            document.getElementById("cidadePaciente").textContent = paciente.cidade || "Não informada";
+
+            // Preenche o CARD: Histórico Odontológico
+            document.getElementById("ultimoAtendimento").textContent = paciente.ultimo_atendimento || "Nenhum registro";
+            document.getElementById("dentistaPaciente").textContent = paciente.dentista_responsavel || "Não designado";
+            document.getElementById("procedimentoPaciente").textContent = paciente.procedimento || "Nenhum";
+            document.getElementById("retornoPaciente").textContent = paciente.proximo_retorno || "Não agendado";
+            document.getElementById("obsPaciente").textContent = paciente.observacoes || "Sem observações";
+        })
+        .catch(error => {
+            console.error("Erro ao carregar detalhes:", error);
+            alert("Erro ao carregar as informações do paciente do banco de dados.");
+        });
+});
