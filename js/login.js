@@ -3,7 +3,7 @@ const form = document.getElementById("loginForm");
 form.addEventListener("submit", async function(event) {
     event.preventDefault();
 
-    const email = document.getElementById("email").value.trim();const email = document.getElementById("email").value.trim();
+    const email = document.getElementById("email").value.trim();
     const senha = document.getElementById("senha").value.trim();
 
     try {
