@@ -1,179 +1,47 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // 1. Captura o ID que vem na URL (ex: detalhes-atendimento.html?id=1)
+    const urlParams = new URLSearchParams(window.location.search);
+    const idAtendimento = urlParams.get('id');
 
-    /* =========================
-       PEGAR ID DA URL
-    ========================= */
-
-    const params =
-        new URLSearchParams(
-            window.location.search
-        );
-
-    const idAtendimento =
-        Number(
-            params.get("id")
-        );
-
-    /* =========================
-       PEGAR LISTA
-    ========================= */
-
-    const atendimentos =
-        JSON.parse(
-            localStorage.getItem(
-                "listaAtendimentos"
-            )
-        ) || [];
-
-    /* =========================
-       PROCURAR ATENDIMENTO
-    ========================= */
-
-    const atendimento =
-        atendimentos.find(item =>
-            item.id === idAtendimento
-        );
-
-    /* =========================
-       NÃO ENCONTRADO
-    ========================= */
-
-    if (!atendimento) {
-
-        alert(
-            "Atendimento não encontrado."
-        );
-
-        window.location.href =
-            "atendimentos.html";
-
-        return;
-
+    if (idAtendimento) {
+        buscarAtendimento(idAtendimento);
+    } else {
+        alert("ID do atendimento não encontrado na URL.");
     }
-
-    /* =========================
-       PREENCHER DADOS
-    ========================= */
-
-    document.getElementById(
-        "nomePaciente"
-    ).textContent =
-        atendimento.paciente;
-
-    document.getElementById(
-        "cpfPaciente"
-    ).textContent =
-        atendimento.cpf;
-
-    document.getElementById(
-        "telefonePaciente"
-    ).textContent =
-        atendimento.telefone;
-
-    document.getElementById(
-        "idadePaciente"
-    ).textContent =
-        atendimento.idade;
-
-    document.getElementById(
-        "dataAtendimento"
-    ).textContent =
-        atendimento.data;
-
-    document.getElementById(
-        "dentista"
-    ).textContent =
-        atendimento.dentista;
-
-    /* =========================
-       PRIORIDADE
-    ========================= */
-
-    const prioridade =
-        document.getElementById(
-            "prioridade"
-        );
-
-    prioridade.textContent =
-        atendimento.prioridade;
-
-    prioridade.classList.add(
-        atendimento.cor
-    );
-
-    /* =========================
-       DADOS CLÍNICOS
-    ========================= */
-
-    document.getElementById(
-        "queixaPrincipal"
-    ).textContent =
-        atendimento.queixa;
-
-    document.getElementById(
-        "procedimentos"
-    ).textContent =
-        atendimento.procedimentos;
-
-    document.getElementById(
-        "observacoes"
-    ).textContent =
-        atendimento.observacoes;
-
-    /* =========================
-       EDITAR
-    ========================= */
-
-    document.querySelector(
-        ".btn-editar"
-    ).addEventListener(
-        "click",
-        () => {
-
-            alert(
-                "Abrir tela de edição."
-            );
-
-        }
-    );
-
-    /* =========================
-       EXCLUIR
-    ========================= */
-
-    document.querySelector(
-        ".btn-excluir"
-    ).addEventListener(
-        "click",
-        () => {
-
-            const confirmar =
-                confirm(
-                    "Deseja excluir este atendimento?"
-                );
-
-            if (confirmar) {
-
-                const novaLista =
-                    atendimentos.filter(item =>
-                        item.id !== idAtendimento
-                    );
-
-                localStorage.setItem(
-                    "listaAtendimentos",
-                    JSON.stringify(novaLista)
-                );
-
-                alert(
-                    "Atendimento excluído com sucesso."
-                );
-
-                window.location.href =
-                    "atendimentos.html";
-
-            }
-
-        }
-    );
-
 });
+
+async function buscarAtendimento(id) {
+    try {
+        const response = await fetch(`http://localhost:3000/api/atendimentos/${id}`);
+        if (!response.ok) throw new Error('Erro ao buscar detalhes do atendimento');
+        
+        const data = await response.json();
+        
+        // Preenchendo os campos
+        document.getElementById('nomePaciente').textContent = data.nome_paciente || 'Não informado';
+        document.getElementById('dataAtendimento').textContent = formatarData(data.data_hora);
+        document.getElementById('dentista').textContent = data.nome_dentista || 'Não informado';
+        document.getElementById('cpfPaciente').textContent = data.cpf_paciente || 'Não informado';
+        document.getElementById('telefonePaciente').textContent = data.telefone_paciente || 'Não informado';
+        document.getElementById('prioridade').textContent = data.prioridade || 'Normal';
+        
+        // Cálculo simples de idade (aproximado)
+        if(data.data_nascimento) {
+            const anoNasc = new Date(data.data_nascimento).getFullYear();
+            const anoAtual = new Date().getFullYear();
+            document.getElementById('idadePaciente').textContent = (anoAtual - anoNasc) + " anos";
+        }
+
+        document.getElementById('queixaPrincipal').textContent = data.queixa || 'Sem queixas';
+        
+    } catch (error) {
+        console.error('Erro ao carregar detalhes:', error);
+        alert("Não foi possível carregar os dados deste atendimento.");
+    }
+}
+
+// Função auxiliar para deixar a data legível
+function formatarData(dataISO) {
+    const data = new Date(dataISO);
+    return data.toLocaleString('pt-BR');
+}

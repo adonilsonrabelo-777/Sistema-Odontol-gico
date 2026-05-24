@@ -192,29 +192,12 @@
                     <!-- DENTISTA -->
 
                     <div class="grupo">
-
                         <label>
-
                             Dentista
-
                         </label>
-
                         <select id="dentista">
-
-                            <option value="">
-                                Selecione o dentista
-                            </option>
-
-                            <option>
-                                Dr. Lucas
-                            </option>
-
-                            <option>
-                                Dra. Ana
-                            </option>
-
+                            <option value="">Selecione o dentista</option>
                         </select>
-
                     </div>
 
                     <!-- PRIORIDADE -->
@@ -229,89 +212,57 @@
 
                         <div class="prioridades">
 
-                            <!-- PRIORIDADE 1 -->
-
-                            <div class="card-prioridade vermelho" onclick="selecionarPrioridade('1° Prioridade')">
-
+                            <div class="card-prioridade vermelho"
+                                onclick="selecionarPrioridade(this, 'Vermelho', '#dc2626')">
                                 <i class="fa-solid fa-tooth"></i>
+                                <h3>ALTA URGÊNCIA</h3>
+                                <p>Casos graves</p>
+                            </div>
 
-                                <h3>
-                                    1° PRIORIDADE
-                                </h3>
+                            <div class="card-prioridade amarelo"
+                                onclick="selecionarPrioridade(this, 'Amarelo', '#ea580c')">
+                                <i class="fa-solid fa-tooth"></i>
+                                <h3>MÉDIA URGÊNCIA</h3>
+                                <p>Casos moderados</p>
+                            </div>
 
-                                <p>
-                                    Sentindo dores
-                                </p>
+                            <div class="card-prioridade verde" onclick="selecionarPrioridade(this, 'Verde', '#15803d')">
+                                <i class="fa-solid fa-tooth"></i>
+                                <h3>POUCA URGÊNCIA</h3>
+                                <p>Demais casos</p>
+                            </div>
+
+                            <!-- QUEIXA -->
+
+                            <div class="grupo">
+
+                                <label>
+
+                                    Queixa principal
+
+                                </label>
+
+                                <textarea id="queixa" placeholder="Descreva a queixa do paciente"></textarea>
 
                             </div>
 
-                            <!-- PRIORIDADE 2 -->
+                            <!-- BOTÕES -->
 
-                            <div class="card-prioridade amarelo" onclick="selecionarPrioridade('2° Prioridade')">
+                            <div class="acoes">
 
-                                <i class="fa-solid fa-tooth"></i>
+                                <button type="button" id="btnCancelar" class="btn-cancelar">
 
-                                <h3>
-                                    2° PRIORIDADE
-                                </h3>
+                                    CANCELAR
 
-                                <p>
-                                    Extração dentária
-                                </p>
+                                </button>
 
-                            </div>
+                                <button type="submit" class="btn-salvar">
 
-                            <!-- PRIORIDADE 3 -->
+                                    SALVAR
 
-                            <div class="card-prioridade verde" onclick="selecionarPrioridade('Pouca Urgência')">
-
-                                <i class="fa-solid fa-tooth"></i>
-
-                                <h3>
-                                    POUCA URGÊNCIA
-                                </h3>
-
-                                <p>
-                                    Demais casos
-                                </p>
+                                </button>
 
                             </div>
-
-                        </div>
-
-                    </div>
-
-                    <!-- QUEIXA -->
-
-                    <div class="grupo">
-
-                        <label>
-
-                            Queixa principal
-
-                        </label>
-
-                        <textarea id="queixa" placeholder="Descreva a queixa do paciente"></textarea>
-
-                    </div>
-
-                    <!-- BOTÕES -->
-
-                    <div class="acoes">
-
-                        <button type="reset" class="btn-cancelar">
-
-                            CANCELAR
-
-                        </button>
-
-                        <button type="submit" class="btn-salvar">
-
-                            SALVAR
-
-                        </button>
-
-                    </div>
 
                 </form>
 

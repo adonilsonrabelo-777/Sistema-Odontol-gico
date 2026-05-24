@@ -1,326 +1,142 @@
 /* =========================
-   DADOS
+   ESTADO GLOBAL (DADOS DO BANCO)
 ========================= */
-
-const atendimentos = [
-
-    {
-        id: 1,
-        data: '20/05/2026',
-        paciente: 'Maria da Silva',
-        cpf: '000.000.000-00',
-        telefone: '(00) 00000-0000',
-        idade: '32 anos',
-        dentista: 'Dr. Lucas',
-        prioridade: '1° Prioridade',
-        cor: 'vermelho',
-        queixa: 'Dor intensa no molar inferior.',
-        procedimentos: 'Limpeza e medicação.',
-        observacoes: 'Retorno em 7 dias.'
-    },
-
-    {
-        id: 2,
-        data: '20/05/2026',
-        paciente: 'João Pedro Souza',
-        cpf: '111.111.111-11',
-        telefone: '(11) 11111-1111',
-        idade: '35 anos',
-        dentista: 'Dra. Ana',
-        prioridade: '2° Prioridade',
-        cor: 'amarelo',
-        queixa: 'Sensibilidade dentária.',
-        procedimentos: 'Aplicação de flúor.',
-        observacoes: 'Evitar alimentos gelados.'
-    },
-
-    {
-        id: 3,
-        data: '21/05/2026',
-        paciente: 'Ana Paula Santos',
-        cpf: '222.222.222-22',
-        telefone: '(22) 22222-2222',
-        idade: '29 anos',
-        dentista: 'Dr. Lucas',
-        prioridade: 'Pouca Urgência',
-        cor: 'verde',
-        queixa: 'Consulta de rotina.',
-        procedimentos: 'Limpeza completa.',
-        observacoes: 'Paciente sem alterações.'
-    },
-
-    {
-        id: 4,
-        data: '21/05/2026',
-        paciente: 'Carlos Alberto Lima',
-        cpf: '333.333.333-33',
-        telefone: '(33) 33333-3333',
-        idade: '44 anos',
-        dentista: 'Dra. Ana',
-        prioridade: 'Pouca Urgência',
-        cor: 'verde',
-        queixa: 'Avaliação odontológica.',
-        procedimentos: 'Raio-x panorâmico.',
-        observacoes: 'Necessita retorno.'
-    },
-
-    {
-        id: 5,
-        data: '22/05/2026',
-        paciente: 'Fernanda Oliveira',
-        cpf: '444.444.444-44',
-        telefone: '(44) 44444-4444',
-        idade: '26 anos',
-        dentista: 'Dr. Lucas',
-        prioridade: '1° Prioridade',
-        cor: 'vermelho',
-        queixa: 'Dor gengival.',
-        procedimentos: 'Limpeza e medicação.',
-        observacoes: 'Retorno em 5 dias.'
-    }
-
-];
-
-/* =========================
-   LOCAL STORAGE
-========================= */
-
-localStorage.setItem(
-    "listaAtendimentos",
-    JSON.stringify(atendimentos)
-);
+let atendimentos = [];
 
 /* =========================
    ELEMENTOS
 ========================= */
+const tbody = document.getElementById('tbodyAtendimentos');
+const filtroDentista = document.getElementById('filtroDentista');
+const filtroPrioridade = document.getElementById('filtroPrioridade');
 
-const tbody =
-    document.getElementById(
-        'tbodyAtendimentos'
-    );
+/* =========================
+   INICIAR E BUSCAR DADOS
+========================= */
+document.addEventListener("DOMContentLoaded", () => {
+    carregarAtendimentosDoServidor();
+});
 
-const filtroDentista =
-    document.getElementById(
-        'filtroDentista'
-    );
-
-const filtroPrioridade =
-    document.getElementById(
-        'filtroPrioridade'
-    );
+async function carregarAtendimentosDoServidor() {
+    try {
+        const response = await fetch('http://localhost:3000/api/atendimentos');
+        if (!response.ok) throw new Error('Não foi possível buscar a lista de atendimentos');
+        
+        atendimentos = await response.json();
+        
+        carregarFiltros();
+        renderizarAtendimentos(atendimentos);
+    } catch (error) {
+        console.error('Erro:', error);
+        tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:red;">Erro ao carregar dados do servidor.</td></tr>`;
+    }
+}
 
 /* =========================
    RENDERIZAR
 ========================= */
-
+/* =========================
+   RENDERIZAR (COM DATA FORMATADA)
+========================= */
 function renderizarAtendimentos(lista) {
-
     tbody.innerHTML = '';
 
-    lista.forEach((item, index) => {
+    if (lista.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" style="text-align:center;">Nenhum atendimento encontrado.</td></tr>`;
+        return;
+    }
 
+    // Função interna para formatar a data (já vimos que ela funciona!)
+    const formatarData = (dataISO) => {
+        const data = new Date(dataISO);
+        return `${String(data.getDate()).padStart(2, '0')}/${String(data.getMonth() + 1).padStart(2, '0')}/${data.getFullYear()} ${String(data.getHours()).padStart(2, '0')}:${String(data.getMinutes()).padStart(2, '0')}`;
+    };
+
+    lista.forEach((item) => {
         tbody.innerHTML += `
-
             <tr>
-
-                <td>${item.data}</td>
-
+                <td>${formatarData(item.data)}</td>
                 <td>${item.paciente}</td>
-
                 <td>${item.dentista}</td>
-
                 <td>
-
                     <span class="tag ${item.cor}">
-
                         ${item.prioridade}
-
                     </span>
-
                 </td>
-
                 <td>
-
                     <div class="acoes">
-
-                        <!-- VISUALIZAR -->
-
-                        <a
-                        href="detalhes-atendimento.html?id=${item.id}"
-                        class="btn-acao visualizar">
-
+                        <a href="detalhes-atendimento.html?id=${item.id}" class="btn-acao visualizar">
                             <i class="fa-regular fa-eye"></i>
-
                         </a>
-
-                        <!-- EDITAR -->
-
-                        <a
-                        href="detalhes-atendimento.html?id=${item.id}"
-                        class="btn-acao editar">
-
+                        <a href="editar-atendimento.html?id=${item.id}" class="btn-acao editar">
                             <i class="fa-regular fa-pen-to-square"></i>
-
                         </a>
-
-                        <!-- EXCLUIR -->
-
-                        <button
-                        class="btn-acao excluir"
-                        onclick="excluir(${index})">
-
+                        <button class="btn-acao excluir" onclick="excluir(${item.id})">
                             <i class="fa-regular fa-trash-can"></i>
-
                         </button>
-
                     </div>
-
                 </td>
-
             </tr>
-
         `;
-
     });
-
 }
 
 /* =========================
-   PREENCHER FILTROS
+   PREENCHER FILTROS (DINAMICAMENTE)
 ========================= */
-
 function carregarFiltros() {
+    // Reseta filtros mantendo apenas a opção padrão
+    filtroDentista.innerHTML = '<option value="">Todos os dentistas</option>';
+    filtroPrioridade.innerHTML = '<option value="">Todas as prioridades</option>';
 
-    /* DENTISTAS */
-
-    const dentistas =
-        [...new Set(
-            atendimentos.map(item =>
-                item.dentista
-            )
-        )];
-
+    const dentistas = [...new Set(atendimentos.map(item => item.dentista))];
     dentistas.forEach(dentista => {
-
-        filtroDentista.innerHTML += `
-
-            <option value="${dentista}">
-
-                ${dentista}
-
-            </option>
-
-        `;
-
+        filtroDentista.innerHTML += `<option value="${dentista}">${dentista}</option>`;
     });
 
-    /* PRIORIDADES */
-
-    const prioridades =
-        [...new Set(
-            atendimentos.map(item =>
-                item.prioridade
-            )
-        )];
-
+    const prioridades = [...new Set(atendimentos.map(item => item.prioridade))];
     prioridades.forEach(prioridade => {
-
-        filtroPrioridade.innerHTML += `
-
-            <option value="${prioridade}">
-
-                ${prioridade}
-
-            </option>
-
-        `;
-
+        filtroPrioridade.innerHTML += `<option value="${prioridade}">${prioridade}</option>`;
     });
-
 }
 
 /* =========================
    FILTRAR
 ========================= */
-
 function filtrarAtendimentos() {
+    const dentistaSelecionado = filtroDentista.value;
+    const prioridadeSelecionada = filtroPrioridade.value;
 
-    const dentistaSelecionado =
-        filtroDentista.value;
+    const filtrados = atendimentos.filter(item => {
+        const filtroDentistaOk = dentistaSelecionado === '' || item.dentista === dentistaSelecionado;
+        const filtroPrioridadeOk = prioridadeSelecionada === '' || item.prioridade === prioridadeSelecionada;
+        return (filtroDentistaOk && filtroPrioridadeOk);
+    });
 
-    const prioridadeSelecionada =
-        filtroPrioridade.value;
+    renderizarAtendimentos(filtrados);
+}
 
-    const filtrados =
-        atendimentos.filter(item => {
+filtroDentista.addEventListener('change', filtrarAtendimentos);
+filtroPrioridade.addEventListener('change', filtrarAtendimentos);
 
-            const filtroDentistaOk =
-                dentistaSelecionado === '' ||
-                item.dentista === dentistaSelecionado;
+/* =========================
+   EXCLUIR DO BANCO
+========================= */
+async function excluir(id) {
+    if (!confirm('Deseja realmente excluir este atendimento?')) return;
 
-            const filtroPrioridadeOk =
-                prioridadeSelecionada === '' ||
-                item.prioridade === prioridadeSelecionada;
-
-            return (
-                filtroDentistaOk &&
-                filtroPrioridadeOk
-            );
-
+    try {
+        const response = await fetch(`http://localhost:3000/api/atendimentos/${id}`, {
+            method: 'DELETE'
         });
-
-    renderizarAtendimentos(
-        filtrados
-    );
-
-}
-
-/* =========================
-   EVENTOS
-========================= */
-
-filtroDentista.addEventListener(
-    'change',
-    filtrarAtendimentos
-);
-
-filtroPrioridade.addEventListener(
-    'change',
-    filtrarAtendimentos
-);
-
-/* =========================
-   EXCLUIR
-========================= */
-
-function excluir(index) {
-
-    const confirmar =
-        confirm(
-            'Deseja excluir este atendimento?'
-        );
-
-    if (confirmar) {
-
-        atendimentos.splice(index, 1);
-
-        localStorage.setItem(
-            "listaAtendimentos",
-            JSON.stringify(atendimentos)
-        );
-
-        filtrarAtendimentos();
-
+        
+        if (response.ok) {
+            alert('Atendimento excluído!');
+            carregarAtendimentosDoServidor(); // Chama a função para redesenhar a tabela
+        } else {
+            alert('Erro ao excluir no servidor.');
+        }
+    } catch (error) {
+        console.error('Erro na rede:', error);
     }
-
 }
-
-/* =========================
-   INICIAR
-========================= */
-
-carregarFiltros();
-
-renderizarAtendimentos(
-    atendimentos
-);

@@ -157,6 +157,132 @@ app.delete('/api/pacientes/:id', (req, res) => {
     });
 });
 
+// --- ROTAS DE ATENDIMENTOS ---
+
+// Listar atendimentos (fazendo um JOIN para trazer o nome real do paciente se necessário, ou trazendo tudo)
+// Rota para listar todos os atendimentos juntando os nomes reais das tabelas relacionadas
+app.get('/api/atendimentos', (req, res) => {
+    // Usamos INNER JOIN para buscar o nome do paciente e o nome do dentista (da tabela usuarios)
+    const query = `
+        SELECT 
+            a.id,
+            p.nome AS paciente,
+            a.data_hora AS data,
+            u.nome AS dentista,
+            a.prioridade,
+            a.queixa,
+            a.status
+        FROM atendimentos a
+        INNER JOIN pacientes p ON a.paciente_id = p.id
+        INNER JOIN usuarios u ON a.dentista_id = u.id
+        ORDER BY a.id DESC
+    `;
+
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error('Erro ao listar atendimentos:', err);
+            return res.status(500).json({ erro: "Erro ao buscar atendimentos do banco" });
+        }
+        res.json(results);
+    });
+});
+
+// ROTA: Buscar UM atendimento específico pelo ID
+// ROTA: Buscar UM atendimento específico pelo ID
+app.get('/api/atendimentos/:id', (req, res) => {
+    const { id } = req.params;
+    const query = `
+        SELECT 
+            p.nome AS nome_paciente,
+            p.cpf AS cpf_paciente,
+            p.telefone AS telefone_paciente,
+            p.data_nascimento,
+            a.data_hora,
+            u.nome AS nome_dentista,
+            a.queixa,
+            a.status,
+            a.prioridade
+        FROM atendimentos a
+        INNER JOIN pacientes p ON a.paciente_id = p.id
+        INNER JOIN usuarios u ON a.dentista_id = u.id
+        WHERE a.id = ?
+    `;
+
+    db.query(query, [id], (err, results) => {
+        if (err) return res.status(500).json({ erro: "Erro no servidor" });
+        if (results.length === 0) return res.status(404).json({ erro: "Não encontrado" });
+        res.json(results[0]); 
+    });
+});
+
+// Cadastrar Novo Atendimento
+// =========================================================================
+// ROTA DEFINITIVA PARA REGISTRAR ATENDIMENTO (SEM A COLUNA COR)
+// =========================================================================
+app.post('/api/atendimentos', (req, res) => {
+    // Captura os dados vindos do Front-end
+    const { paciente, data, dentista, prioridade, queixa } = req.body;
+
+    // 1. Validação de segurança no servidor para os campos obrigatórios
+    if (!paciente || !data || !dentista || !prioridade) {
+        return res.status(400).json({ erro: "Por favor, preencha todos os campos obrigatórios!" });
+    }
+
+    // 2. Query mapeando as colunas reais do banco: paciente_id, dentista_id, data_hora, prioridade, queixa e status
+    const query = `
+        INSERT INTO atendimentos (paciente_id, dentista_id, data_hora, prioridade, queixa, status) 
+        VALUES (
+            (SELECT id FROM pacientes WHERE nome = ? LIMIT 1),
+            (SELECT id FROM usuarios WHERE nome = ? LIMIT 1),
+            ?, ?, ?, 'Agendado'
+        )
+    `;
+
+    const valores = [
+        paciente, 
+        dentista, 
+        data, 
+        prioridade, 
+        queixa || "Sem queixas registradas"
+    ];
+
+    db.query(query, valores, (err, result) => {
+        if (err) {
+            console.error('🚨 ERRO DO MYSQL AO INSERIR ATENDIMENTO:', err.message);
+            return res.status(500).json({ erro: "Erro interno no Banco de Dados: " + err.message });
+        }
+        
+        // Retorna sucesso para o front-end
+        res.status(201).json({ 
+            mensagem: "Atendimento gravado com sucesso!", 
+            id: result.insertId 
+        });
+    });
+});
+
+
+// Buscar apenas usuários que são Dentistas para preencher o formulário
+app.get('/api/dentistas', (req, res) => {
+    // Busca exatamente por 'Dentista'
+    const query = "SELECT id, nome FROM usuarios WHERE tipo_usuario = 'Dentista' ORDER BY nome ASC";
+    db.query(query, (err, results) => {
+        if (err) {
+            console.error('Erro ao buscar dentistas:', err);
+            return res.status(500).json({ erro: "Erro ao buscar dentistas" });
+        }
+        res.json(results);
+    });
+});
+
+// Excluir Atendimento
+app.delete('/api/atendimentos/:id', (req, res) => {
+    const { id } = req.params;
+    db.query("DELETE FROM atendimentos WHERE id = ?", [id], (err, result) => {
+        if (err) return res.status(500).json({ erro: "Erro ao excluir atendimento" });
+        res.json({ sucesso: true, mensagem: "Atendimento removido com sucesso!" });
+    });
+});
+
 // 3. Ligando o Servidor
 const PORT = 3000;
 app.listen(PORT, () => {
